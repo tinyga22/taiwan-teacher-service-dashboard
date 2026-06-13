@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>?????????????</title>
+  <title>台灣教學區老師服務質量看板</title>
   <style>
     :root {
       --bg: #f5f7f6;
@@ -105,7 +105,7 @@
     <section class="hero">
       <div class="hero-top">
         <div>
-          <h1>?????????????</h1>
+          <h1>台灣教學區老師服務質量看板</h1>
           <div class="hero-sub" id="heroSub"></div>
         </div>
         <div class="pill-row">
@@ -137,7 +137,7 @@
           </thead>
           <tbody id="monthTableBody"></tbody>
         </table>
-      </div></section><section class="section"><div class="section-head"><h2>????</h2><p id="weekHeadNote"></p></div><div class="table-wrap">
+      </div></section><section class="section"><div class="section-head"><h2>周度情況</h2><p id="weekHeadNote"></p></div><div class="table-wrap">
         <table>
           <thead>
             <tr>
@@ -282,7 +282,7 @@
       return top ? `${top[0]}（${top[1]} 次）` : "本月暫無異常原因記錄";
     }
     function renderHero() {
-      heroSub.textContent = "?????????????????????????????????";
+      heroSub.textContent = "適用於台灣教學區老師服務自查與管理復盤，支持按月份與周次切換查看。";
       pillTeachers.textContent = `老師數 ${num(DATA.overall.teacher_count)}`;
       pillPeriods.textContent = `周次 ${num(DATA.overall.period_count)}`;
       pillExceptions.textContent = `異常剔除 ${num(DATA.overall.exception_count)}`;
@@ -361,7 +361,7 @@
         `<p><span class="analysis-label">異常說明：</span>本月累計剔除 <strong>${num(month.exception_count)}</strong> 條異常記錄，未納入完成率統計。異常主要來自 <strong>LINE 無法匹配學員 ID</strong> 與 <strong>老師身份和實際上課老師不一致</strong> 兩類情況。</p>`,
         `<p><span class="analysis-label">周度變化：</span>${trendText}</p>`,
         `<p><span class="analysis-label">關注重點：</span>從月度均值來看，當前最需要關注的是 <strong>${weakest[0]}</strong>，月度均值為 <strong>${pct(weakest[1])}</strong>。課前高頻問題集中在 <strong>${topIssue(periods, teacher => teacher.pre_reasons)}</strong>；課後文字高頻問題集中在 <strong>${topIssue(periods, teacher => teacher.text_reasons)}</strong>。</p>`,
-      ].join(""); footerInfo.innerHTML = `?????2026-06-13 19:00?Asia/Shanghai?<br>?????2026-04?2026-05 ? 2026-06 W1 ???????????<br>??????????????????????????????`;
+      ].join(""); footerInfo.innerHTML = `更新時間：2026-06-13 19:00（Asia/Shanghai）<br>統計範圍：2026-04、2026-05 與 2026-06 W1 的台灣教學區質檢樣本。<br>頁面用途：管理者查看月度與周度概況；老師按周次進行個人自查。`;
     }
     function syncPeriods() {
       const periods = periodsForCurrentMonth();
