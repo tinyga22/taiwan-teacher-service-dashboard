@@ -380,8 +380,24 @@
       teacherSelect.value = exists ? teacherSelect.value : teachers[0].teacher_id;
     }
     function getIssueStudents(periodKey, teacherId, metricKey, reason) {
-      const key = [periodKey, teacherId, metricKey, (reason || '').trim() || '__EMPTY__'].join('|');
-      return ISSUE_STUDENTS[key] || [];
+      const normalized = (reason || '').trim();
+      const candidates = [
+        [periodKey, teacherId, metricKey, normalized || '__EMPTY__'].join('|'),
+        [periodKey, teacherId, metricKey, normalized].join('|'),
+        [periodKey, teacherId, metricKey, '__EMPTY__'].join('|'),
+      ];
+      for (const key of candidates) {
+        if (ISSUE_STUDENTS[key] && ISSUE_STUDENTS[key].length) return ISSUE_STUDENTS[key];
+      }
+      if (!normalized) {
+        const prefix = [periodKey, teacherId, metricKey].join('|') + '|';
+        const merged = [];
+        for (const [key, students] of Object.entries(ISSUE_STUDENTS)) {
+          if (key.startsWith(prefix)) merged.push(...students);
+        }
+        return merged;
+      }
+      return [];
     }
     function renderTeacherCard() {
       const teachers = filteredTeachers(currentPeriod().teachers || []);
