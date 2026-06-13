@@ -443,7 +443,7 @@
               <div class="reason-block">
                 <div class="reason-title">${section.title}</div>
                 ${section.items && section.items.length
-                  ? `<div class="reason-meta">${section.items.map(([reason, count]) => { const students = getIssueStudents(currentPeriod().key, teacher.teacher_id, section.metric, reason); return `<div><div class="reason-summary">${normalizeReason(reason)}：${num(count)} 人</div>${students.length ? `<details><summary class="student-toggle">查看學員名單（${students.length}）</summary><div class="student-list">${students.map(student => `<div class="student-item"><span class="student-name">${student.student_name || "未命名學員"}</span><span class="student-id">ID ${student.student_id || "--"}</span></div>`).join("")}</div></details>` : ""}</div>`; }).join("")}</div>`
+                  ? `<div class="reason-meta">${section.items.map(([reason, count]) => { const students = getIssueStudents(currentPeriod().key, teacher.teacher_id, section.metric, reason); return `<div><div class="reason-summary">${normalizeReason(reason)}：${num(count)} 人</div>${students.length ? `<details><summary class="student-toggle">查看學員名單（${students.length}）</summary><div class="student-list">${students.map(student => `<div class="student-item"><div><div class="student-name">${student.student_name || "未命名學員"}</div><div class="student-meta">${student.class_date || "日期待補充"}｜${student.attendance || "狀態待補充"}</div></div><span class="student-id">ID ${student.student_id || "--"}</span></div>`).join("")}</div></details>` : ""}</div>`; }).join("")}</div>`
                   : `<div class="ok">本項已完成或暫無異常原因。</div>`}
               </div>
             `).join("")}
