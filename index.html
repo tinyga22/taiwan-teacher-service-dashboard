@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>台灣老師服務質檢看板</title>
+  <title>?????????????</title>
   <style>
     :root {
       --bg: #f5f7f6;
@@ -77,7 +77,7 @@
     .reason-title { margin: 0 0 8px; font-size: 15px; font-weight: 700; }
     .ok { color: var(--accent); font-weight: 700; font-size: 13px; }
     ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; line-height: 1.75; }
-    .empty { padding: 36px 16px; text-align: center; color: var(--muted); font-size: 14px; }
+    .empty { padding: 36px 16px; text-align: center; color: var(--muted); font-size: 14px; } .footer { padding: 0 24px 24px; } .footer-box { border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.8; }
     @media (max-width: 1120px) {
       .summary-grid, .filter-row, .teacher-grid { grid-template-columns: 1fr; }
       .hero-top, .teacher-top { flex-direction: column; }
@@ -98,7 +98,7 @@
     <section class="hero">
       <div class="hero-top">
         <div>
-          <h1>台灣老師服務質檢看板</h1>
+          <h1>?????????????</h1>
           <div class="hero-sub" id="heroSub"></div>
         </div>
         <div class="pill-row">
@@ -130,14 +130,7 @@
           </thead>
           <tbody id="monthTableBody"></tbody>
         </table>
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-head">
-        <h2>周度情況</h2>
-        <p id="weekHeadNote"></p>
-      </div>
-      <div class="table-wrap">
+      </div></section><section class="section"><div class="section-head"><h2>????</h2><p id="weekHeadNote"></p></div><div class="table-wrap">
         <table>
           <thead>
             <tr>
@@ -154,8 +147,7 @@
           <tbody id="weekTableBody"></tbody>
         </table>
       </div>
-      <div class="analysis" id="analysisBlock"></div>
-    </section>
+      <div class="analysis" id="analysisBlock"></div><div class="footer"><div class="footer-box" id="footerInfo"></div></div></section>
     <section class="section">
       <div class="section-head">
         <h2>老師自查</h2>
@@ -209,7 +201,7 @@
     const weekTableBody = document.getElementById("weekTableBody");
     const weekHeadNote = document.getElementById("weekHeadNote");
     const analysisBlock = document.getElementById("analysisBlock");
-    const teacherCard = document.getElementById("teacherCard");
+    const teacherCard = document.getElementById("teacherCard"); const footerInfo = document.getElementById("footerInfo");
     const monthKeyFromPeriod = key => key.slice(0, 7);
     const pct = value => `${(Number(value || 0) * 100).toFixed(1)}%`;
     const pctPoint = value => `${Math.abs(Number(value || 0) * 100).toFixed(1)}pt`;
@@ -218,7 +210,7 @@
     const safeText = value => String(value || "").trim();
     const normalizeReason = reason => {
       const text = safeText(reason);
-      return text || "原因待補充";
+      return text || "未識別到可歸因文案，建議回看原始對話時間窗";
     };
     const months = Object.values(DATA.periods.reduce((acc, period) => {
       const monthKey = monthKeyFromPeriod(period.key);
@@ -282,7 +274,7 @@
       return top ? `${top[0]}（${top[1]} 次）` : "本月暫無異常原因記錄";
     }
     function renderHero() {
-      heroSub.textContent = "";
+      heroSub.textContent = "?????????????????????????????????";
       pillTeachers.textContent = `老師數 ${num(DATA.overall.teacher_count)}`;
       pillPeriods.textContent = `周次 ${num(DATA.overall.period_count)}`;
       pillExceptions.textContent = `異常剔除 ${num(DATA.overall.exception_count)}`;
@@ -361,7 +353,7 @@
         `<p><span class="analysis-label">異常說明：</span>本月累計剔除 <strong>${num(month.exception_count)}</strong> 條異常記錄，未納入完成率統計。異常主要來自 <strong>LINE 無法匹配學員 ID</strong> 與 <strong>老師身份和實際上課老師不一致</strong> 兩類情況。</p>`,
         `<p><span class="analysis-label">周度變化：</span>${trendText}</p>`,
         `<p><span class="analysis-label">關注重點：</span>從月度均值來看，當前最需要關注的是 <strong>${weakest[0]}</strong>，月度均值為 <strong>${pct(weakest[1])}</strong>。課前高頻問題集中在 <strong>${topIssue(periods, teacher => teacher.pre_reasons)}</strong>；課後文字高頻問題集中在 <strong>${topIssue(periods, teacher => teacher.text_reasons)}</strong>。</p>`,
-      ].join("");
+      ].join(""); footerInfo.innerHTML = `?????2026-06-13 19:00?Asia/Shanghai?<br>?????2026-04?2026-05 ? 2026-06 W1 ???????????<br>??????????????????????????????`;
     }
     function syncPeriods() {
       const periods = periodsForCurrentMonth();
@@ -457,3 +449,4 @@
   </script>
 </body>
 </html>
+
