@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台灣教學區結課 SOP 看板</title>
+  <style>
+    :root {
+      --bg: #f5f7f6;
+      --panel: #ffffff;
+      --text: #173038;
+      --muted: #68767c;
+      --line: rgba(19, 48, 56, 0.08);
+      --accent: #1d745f;
+      --accent-soft: #e9f5ef;
+      --warn: #c56d1f;
+      --track: #e7eeeb;
+      --shadow: 0 18px 40px rgba(20, 37, 45, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei","PingFang TC","PingFang SC",sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap { max-width: 1360px; margin: 0 auto; padding: 0 20px 40px; }
+    .section {
+      margin-top: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .section-head { padding: 22px 24px 0; }
+    .section-head h2 { margin: 0; font-size: 20px; }
+    .section-head p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      padding: 20px 24px 24px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); }
+    .stat-value { margin-top: 8px; font-size: 26px; font-weight: 700; }
+    .stat-note { margin-top: 6px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .table-wrap { padding: 18px 24px 24px; overflow: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 920px; }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+    th { color: var(--muted); font-size: 12px; font-weight: 700; background: #f8fbfa; }
+    tbody tr { cursor: pointer; }
+    tbody tr:hover { background: #f6fbf8; }
+    tbody tr.active { background: #edf7f2; }
+    .rate { font-weight: 700; }
+    .analysis { padding: 18px 24px 24px; }
+    .analysis p { margin: 0 0 12px; font-size: 14px; line-height: 1.9; color: #33464d; }
+    .analysis p:last-child { margin-bottom: 0; }
+    .analysis-label { color: var(--accent); font-weight: 700; }
+    .teacher-panel { padding: 20px 24px 24px; }
+    .filter-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.15fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: "▾";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-40%);
+      color: var(--accent);
+      pointer-events: none;
+      font-size: 16px;
+    }
+    select, button { font: inherit; }
+    select {
+      width: 100%;
+      appearance: none;
+      border: 1px solid rgba(31,111,99,.14);
+      border-radius: 12px;
+      padding: 12px 38px 12px 14px;
+      background: #fff;
+      color: var(--text);
+    }
+    .reset-btn {
+      height: 44px;
+      padding: 0 16px;
+      border: 1px solid rgba(31,111,99,.12);
+      border-radius: 12px;
+      background: #f5faf8;
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .teacher-card {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fbfcfc;
+      padding: 18px;
+    }
+    .teacher-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .teacher-name { font-size: 24px; font-weight: 700; }
+    .teacher-meta { margin-top: 6px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .teacher-tag {
+      white-space: nowrap;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .teacher-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr);
+      gap: 16px;
+    }
+    .panel-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 16px;
+    }
+    .panel-card h3 { margin: 0 0 12px; font-size: 16px; }
+    .metric-row {
+      display: grid;
+      grid-template-columns: 170px 1fr 92px;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-name { font-size: 15px; font-weight: 700; }
+    .progress { height: 10px; border-radius: 999px; background: var(--track); overflow: hidden; }
+    .progress > span { display: block; height: 100%; background: var(--accent); border-radius: inherit; }
+    .metric-value { text-align: right; font-size: 14px; font-weight: 700; }
+    .reason-block + .reason-block {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+    .reason-title { margin: 0 0 8px; font-size: 15px; font-weight: 700; }
+    .ok { color: var(--accent); font-weight: 700; font-size: 13px; }
+    .student-list {
+      margin-top: 8px;
+      max-height: 240px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #fbfdfc;
+    }
+    .student-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--text);
+      border-bottom: 1px dashed rgba(19,48,56,.08);
+      padding: 6px 0;
+    }
+    .student-item:last-child { border-bottom: none; }
+    .student-name { font-weight: 700; }
+    .student-id { color: var(--muted); white-space: nowrap; text-align: right; }
+    ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .empty { padding: 36px 16px; text-align: center; color: var(--muted); font-size: 14px; }
+    .footer { padding: 0 24px 24px; }
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    @media (max-width: 1120px) {
+      .summary-grid, .filter-row, .teacher-grid { grid-template-columns: 1fr; }
+      .teacher-top { flex-direction: column; }
+    }
+    @media (max-width: 760px) {
+      .wrap { padding: 0 14px 28px; }
+      .section-head, .summary-grid, .table-wrap, .analysis, .teacher-panel, .footer { padding-left: 16px; padding-right: 16px; }
+      .metric-row { grid-template-columns: 1fr; }
+      .metric-value { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="section">
+      <div class="section-head">
+        <h2>月度匯總</h2>
+        <p>以結課日期落在所選月份、且結課歸屬老師為台灣教學區的 0 課時未續費學員為樣本，判斷老師是否在結課日期後 48 小時內完成結課寄語。</p>
+      </div>
+      <div class="summary-grid" id="summaryGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>周度情況</h2>
+        <p>選擇月份後，這裡會展示該月份下所有已匯入周次的結課 SOP 結果。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>周次</th>
+              <th>日期範圍</th>
+              <th>應完成數</th>
+              <th>已完成數</th>
+              <th>未完成數</th>
+              <th>異常數</th>
+              <th>完成率</th>
+            </tr>
+          </thead>
+          <tbody id="weeklyTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>看板說明</h2>
+      </div>
+      <div class="analysis" id="analysisText"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>老師自查</h2>
+        <p>先選月份，再選周次與老師，即可查看該老師該周的結課 SOP 完成情況、未完成名單與異常原因。</p>
+      </div>
+      <div class="teacher-panel">
+        <div class="filter-row">
+          <div class="field">
+            <label>月份</label>
+            <div class="select-wrap"><select id="monthSelect"></select></div>
+          </div>
+          <div class="field">
+            <label>周次</label>
+            <div class="select-wrap"><select id="weekSelect"></select></div>
+          </div>
+          <div class="field">
+            <label>老師</label>
+            <div class="select-wrap"><select id="teacherSelect"></select></div>
+          </div>
+          <button class="reset-btn" id="resetBtn" type="button">重置篩選</button>
+        </div>
+        <div id="teacherCard"></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="footer-box">口徑說明：完成率 = 已完成數 / 應完成數。異常樣本指 LINE 中無法建立有效老師消息關聯的名單；未完成樣本則指有對話痕跡，但未命中結課寄語規則或超出課後 48 小時。</div>
+    </div>
+  </div>
+
+  <script>
+    const DATA = {
+      monthlySummaryByMonth: {
+        "2026-05": {
+          due_count: 25,
+          done_count: 15,
+          undone_count: 4,
+          exception_count: 6,
+          done_rate: 0.6,
+          exception_reason_counts: { "LINE中無老師消息": 6 },
+          undone_reason_counts: {
+            "存在疑似結課寄語，但超出課後48小時": 2,
+            "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 2
+          }
+        },
+        "2026-06": {
+          due_count: 5,
+          done_count: 5,
+          undone_count: 0,
+          exception_count: 0,
+          done_rate: 1,
+          exception_reason_counts: {},
+          undone_reason_counts: {}
+        }
+      },
+      weeklySummary: [
+        {
+          week_label: "5W1",
+          start_date: "2026-05-01",
+          end_date: "2026-05-03",
+          due_count: 1,
+          done_count: 1,
+          undone_count: 0,
+          exception_count: 0,
+          done_rate: 1,
+          exception_reason_counts: {},
+          undone_reason_counts: {},
+          teachers: [
+            { teacher_id: "5607", teacher_alias: "小壹老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} }
+          ]
+        },
+        {
+          week_label: "5W2",
+          start_date: "2026-05-04",
+          end_date: "2026-05-10",
+          due_count: 5,
+          done_count: 3,
+          undone_count: 1,
+          exception_count: 1,
+          done_rate: 0.6,
+          exception_reason_counts: { "LINE中無老師消息": 1 },
+          undone_reason_counts: { "存在疑似結課寄語，但超出課後48小時": 1 },
+          teachers: [
+            { teacher_id: "7391", teacher_alias: "小加老師", due_count: 1, done_count: 0, undone_count: 0, exception_count: 1, done_rate: 0, undone_students: [], exception_students: [{ student_id: "25332094", student_name: "Daniel", closure_date: "2026-05-10 00:00:00", reason: "LINE中無老師消息" }], exception_reason_counts: { "LINE中無老師消息": 1 }, undone_reason_counts: {} },
+            { teacher_id: "5607", teacher_alias: "小壹老師", due_count: 1, done_count: 0, undone_count: 1, exception_count: 0, done_rate: 0, undone_students: [{ student_id: "28238049", student_name: "芸芸", closure_date: "2026-05-04 00:00:00", reason: "存在疑似結課寄語，但超出課後48小時" }], exception_students: [], exception_reason_counts: {}, undone_reason_counts: { "存在疑似結課寄語，但超出課後48小時": 1 } },
+            { teacher_id: "73567", teacher_alias: "卷卷兒老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "11032", teacher_alias: "桔桔老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "7498", teacher_alias: "青魚老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} }
+          ]
+        },
+        {
+          week_label: "5W3",
+          start_date: "2026-05-11",
+          end_date: "2026-05-17",
+          due_count: 5,
+          done_count: 3,
+          undone_count: 0,
+          exception_count: 2,
+          done_rate: 0.6,
+          exception_reason_counts: { "LINE中無老師消息": 2 },
+          undone_reason_counts: {},
+          teachers: [
+            { teacher_id: "9025", teacher_alias: "樂羊羊老師", due_count: 1, done_count: 0, undone_count: 0, exception_count: 1, done_rate: 0, undone_students: [], exception_students: [{ student_id: "28436243", student_name: "允辰", closure_date: "2026-05-13 00:00:00", reason: "LINE中無老師消息" }], exception_reason_counts: { "LINE中無老師消息": 1 }, undone_reason_counts: {} },
+            { teacher_id: "76135", teacher_alias: "蘇心老師", due_count: 1, done_count: 0, undone_count: 0, exception_count: 1, done_rate: 0, undone_students: [], exception_students: [{ student_id: "27895062", student_name: "Oli", closure_date: "2026-05-17 00:00:00", reason: "LINE中無老師消息" }], exception_reason_counts: { "LINE中無老師消息": 1 }, undone_reason_counts: {} },
+            { teacher_id: "5607", teacher_alias: "小壹老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "73164", teacher_alias: "曲奇餅乾老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "76029", teacher_alias: "粉栗子老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} }
+          ]
+        },
+        {
+          week_label: "5W4",
+          start_date: "2026-05-18",
+          end_date: "2026-05-24",
+          due_count: 7,
+          done_count: 4,
+          undone_count: 1,
+          exception_count: 2,
+          done_rate: 0.5714,
+          exception_reason_counts: { "LINE中無老師消息": 2 },
+          undone_reason_counts: { "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1 },
+          teachers: [
+            { teacher_id: "69344", teacher_alias: "lala老師", due_count: 1, done_count: 0, undone_count: 1, exception_count: 0, done_rate: 0, undone_students: [{ student_id: "28467928", student_name: "漢堡", closure_date: "2026-05-22 00:00:00", reason: "48小時內有老師消息，但未識別到姓名或結課關鍵詞" }], exception_students: [], exception_reason_counts: {}, undone_reason_counts: { "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1 } },
+            { teacher_id: "76328", teacher_alias: "櫻桃老師", due_count: 1, done_count: 0, undone_count: 0, exception_count: 1, done_rate: 0, undone_students: [], exception_students: [{ student_id: "27624943", student_name: "淇淇", closure_date: "2026-05-20 00:00:00", reason: "LINE中無老師消息" }], exception_reason_counts: { "LINE中無老師消息": 1 }, undone_reason_counts: {} },
+            { teacher_id: "76029", teacher_alias: "粉栗子老師", due_count: 3, done_count: 2, undone_count: 0, exception_count: 1, done_rate: 0.6667, undone_students: [], exception_students: [{ student_id: "28276018", student_name: "鈞鈞 Dino", closure_date: "2026-05-21 00:00:00", reason: "LINE中無老師消息" }], exception_reason_counts: { "LINE中無老師消息": 1 }, undone_reason_counts: {} },
+            { teacher_id: "73567", teacher_alias: "卷卷兒老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "73164", teacher_alias: "曲奇餅乾老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} }
+          ]
+        },
+        {
+          week_label: "5W5",
+          start_date: "2026-05-25",
+          end_date: "2026-05-31",
+          due_count: 7,
+          done_count: 4,
+          undone_count: 2,
+          exception_count: 1,
+          done_rate: 0.5714,
+          exception_reason_counts: { "LINE中無老師消息": 1 },
+          undone_reason_counts: {
+            "存在疑似結課寄語，但超出課後48小時": 1,
+            "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1
+          },
+          teachers: [
+            { teacher_id: "10726", teacher_alias: "星星雨老師", due_count: 2, done_count: 0, undone_count: 2, exception_count: 0, done_rate: 0, undone_students: [{ student_id: "28374136", student_name: "依凝", closure_date: "2026-05-28 00:00:00", reason: "存在疑似結課寄語，但超出課後48小時" }, { student_id: "28466527", student_name: "芊芊", closure_date: "2026-05-27 00:00:00", reason: "48小時內有老師消息，但未識別到姓名或結課關鍵詞" }], exception_students: [], exception_reason_counts: {}, undone_reason_counts: { "存在疑似結課寄語，但超出課後48小時": 1, "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1 } },
+            { teacher_id: "7391", teacher_alias: "小加老師", due_count: 1, done_count: 0, undone_count: 0, exception_count: 1, done_rate: 0, undone_students: [], exception_students: [{ student_id: "26272490", student_name: "林竟駿", closure_date: "2026-05-31 00:00:00", reason: "LINE中無老師消息" }], exception_reason_counts: { "LINE中無老師消息": 1 }, undone_reason_counts: {} },
+            { teacher_id: "72847", teacher_alias: "青豌豆老師", due_count: 2, done_count: 2, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "73164", teacher_alias: "曲奇餅乾老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "4735", teacher_alias: "果凍老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} }
+          ]
+        },
+        {
+          week_label: "6W1",
+          start_date: "2026-06-01",
+          end_date: "2026-06-07",
+          due_count: 5,
+          done_count: 5,
+          undone_count: 0,
+          exception_count: 0,
+          done_rate: 1,
+          exception_reason_counts: {},
+          undone_reason_counts: {},
+          teachers: [
+            { teacher_id: "9025", teacher_alias: "樂羊羊老師", due_count: 1, done_count: 1, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "72847", teacher_alias: "青豌豆老師", due_count: 2, done_count: 2, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} },
+            { teacher_id: "73567", teacher_alias: "卷卷兒老師", due_count: 2, done_count: 2, undone_count: 0, exception_count: 0, done_rate: 1, undone_students: [], exception_students: [], exception_reason_counts: {}, undone_reason_counts: {} }
+          ]
+        }
+      ]
+    };
+
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+    const teacherSelect = document.getElementById('teacherSelect');
+    const weeklyTableBody = document.getElementById('weeklyTableBody');
+    const summaryGrid = document.getElementById('summaryGrid');
+    const teacherCard = document.getElementById('teacherCard');
+    const analysisText = document.getElementById('analysisText');
+
+    const weeks = DATA.weeklySummary || [];
+    const months = [...new Set(weeks.map((week) => String(week.start_date).slice(0, 7)))];
+    const state = {
+      month: months[months.length - 1] || '',
+      weekLabel: '',
+      teacherId: '',
+    };
+
+    function formatInt(v) { return new Intl.NumberFormat('zh-Hant').format(Number(v) || 0); }
+    function formatPct(v) { return ((Number(v) || 0) * 100).toFixed(1) + '%'; }
+    function monthText(month) { return month ? month.replace('-', ' 年 ') + ' 月' : ''; }
+    function esc(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function monthSummary() {
+      return DATA.monthlySummaryByMonth[state.month] || { due_count: 0, done_count: 0, undone_count: 0, exception_count: 0, done_rate: 0, exception_reason_counts: {}, undone_reason_counts: {} };
+    }
+
+    function selectedWeeks() {
+      return weeks.filter((week) => String(week.start_date).slice(0, 7) === state.month);
+    }
+
+    function currentWeek() {
+      return selectedWeeks().find((week) => week.week_label === state.weekLabel) || selectedWeeks()[0] || null;
+    }
+
+    function renderSummary() {
+      const s = monthSummary();
+      summaryGrid.innerHTML = [
+        ['應完成數', formatInt(s.due_count), '結課日期落在本月、且需執行結課 SOP 的學員樣本。'],
+        ['已完成數', formatInt(s.done_count), '結課日期後 48 小時內命中結課寄語的樣本。'],
+        ['未完成數', formatInt(s.undone_count), '有老師消息，但未命中完成規則或超出時限。'],
+        ['異常數', formatInt(s.exception_count), 'LINE 中無法建立有效老師消息關聯的樣本。'],
+        ['完成率', formatPct(s.done_rate), '已完成數 / 應完成數。']
+      ].map(([label, value, note]) =>
+        '<div class="stat-card"><div class="stat-label">' + label + '</div><div class="stat-value">' + value + '</div><div class="stat-note">' + note + '</div></div>'
+      ).join('');
+    }
+
+    function renderWeeklyTable() {
+      weeklyTableBody.innerHTML = selectedWeeks().map((week) => {
+        const active = week.week_label === state.weekLabel ? ' class="active"' : '';
+        return '<tr data-week="' + week.week_label + '"' + active + '>' +
+          '<td>' + week.week_label + '</td>' +
+          '<td>' + week.start_date + ' ~ ' + week.end_date + '</td>' +
+          '<td>' + formatInt(week.due_count) + '</td>' +
+          '<td>' + formatInt(week.done_count) + '</td>' +
+          '<td>' + formatInt(week.undone_count) + '</td>' +
+          '<td>' + formatInt(week.exception_count) + '</td>' +
+          '<td class="rate">' + formatPct(week.done_rate) + '</td>' +
+        '</tr>';
+      }).join('');
+
+      weeklyTableBody.querySelectorAll('tr').forEach((row) => {
+        row.addEventListener('click', () => {
+          state.weekLabel = row.dataset.week;
+          syncTeacherSelection();
+          renderWeekOptions();
+          renderWeeklyTable();
+          renderTeacherCard();
+        });
+      });
+    }
+
+    function renderAnalysis() {
+      const s = monthSummary();
+      const undone = Object.entries(s.undone_reason_counts || {}).sort((a, b) => b[1] - a[1]);
+      const exception = Object.entries(s.exception_reason_counts || {}).sort((a, b) => b[1] - a[1]);
+      analysisText.innerHTML =
+        '<p><span class="analysis-label">數據口徑：</span>' + monthText(state.month) + ' 共覆蓋 ' + formatInt(selectedWeeks().length) + ' 個周次，累計應完成 ' + formatInt(s.due_count) + ' 筆，判斷標準為老師是否在結課日期後 48 小時內送出結課寄語。</p>' +
+        '<p><span class="analysis-label">未完成原因：</span>' + (undone.length ? esc(undone.map(([reason, count]) => reason + ' ' + count + ' 筆').join('；')) : '本月無未完成樣本。') + '</p>' +
+        '<p><span class="analysis-label">異常剔除：</span>' + (exception.length ? esc(exception.map(([reason, count]) => reason + ' ' + count + ' 筆').join('；')) : '本月無異常樣本。') + '</p>';
+    }
+
+    function renderMonthOptions() {
+      monthSelect.innerHTML = months.map((month) => '<option value="' + month + '">' + monthText(month) + '</option>').join('');
+      monthSelect.value = state.month;
+      monthSelect.onchange = () => {
+        state.month = monthSelect.value;
+        state.weekLabel = selectedWeeks()[0]?.week_label || '';
+        state.teacherId = '';
+        renderSummary();
+        renderAnalysis();
+        renderWeekOptions();
+        renderWeeklyTable();
+        renderTeacherCard();
+      };
+    }
+
+    function renderWeekOptions() {
+      const list = selectedWeeks();
+      weekSelect.innerHTML = list.map((week) =>
+        '<option value="' + week.week_label + '">' + week.week_label + '｜' + week.start_date + ' ~ ' + week.end_date + '</option>'
+      ).join('');
+      weekSelect.value = state.weekLabel;
+      weekSelect.onchange = () => {
+        state.weekLabel = weekSelect.value;
+        syncTeacherSelection();
+        renderTeacherOptions();
+        renderWeeklyTable();
+        renderTeacherCard();
+      };
+      renderTeacherOptions();
+    }
+
+    function renderTeacherOptions() {
+      const week = currentWeek();
+      const teachers = (week?.teachers || []).slice().sort((a, b) => String(a.teacher_alias).localeCompare(String(b.teacher_alias), 'zh-Hant'));
+      teacherSelect.innerHTML = teachers.map((teacher) =>
+        '<option value="' + teacher.teacher_id + '">' + esc(teacher.teacher_alias) + '｜ID ' + esc(teacher.teacher_id) + '</option>'
+      ).join('');
+      teacherSelect.value = state.teacherId;
+      teacherSelect.onchange = () => {
+        state.teacherId = teacherSelect.value;
+        renderTeacherCard();
+      };
+    }
+
+    function syncTeacherSelection() {
+      const week = currentWeek();
+      const ids = new Set((week?.teachers || []).map((teacher) => teacher.teacher_id));
+      if (!ids.has(state.teacherId)) {
+        state.teacherId = week?.teachers?.[0]?.teacher_id || '';
+      }
+    }
+
+    function reasonList(reasonCounts) {
+      const entries = Object.entries(reasonCounts || {}).sort((a, b) => b[1] - a[1]);
+      if (!entries.length) return '<div class="ok">本區塊目前沒有名單。</div>';
+      return '<ul>' + entries.map(([reason, count]) => '<li>' + esc(reason) + '（' + formatInt(count) + ' 筆）</li>').join('') + '</ul>';
+    }
+
+    function studentList(students) {
+      if (!students || !students.length) return '<div class="ok">本區塊目前沒有名單。</div>';
+      return '<div class="student-list">' + students.map((student) =>
+        '<div class="student-item"><div><div class="student-name">' + esc(student.student_name || '-') + '</div><div>' + esc(student.reason || '') + '</div></div><div class="student-id">ID ' + esc(student.student_id || '-') + '<br>' + esc(String(student.closure_date || '').slice(0, 16)) + '</div></div>'
+      ).join('') + '</div>';
+    }
+
+    function renderTeacherCard() {
+      const week = currentWeek();
+      const teacher = (week?.teachers || []).find((item) => item.teacher_id === state.teacherId);
+      if (!teacher) {
+        teacherCard.innerHTML = '<div class="empty">目前篩選條件下沒有老師資料。</div>';
+        return;
+      }
+      const undoneRatio = teacher.due_count ? teacher.undone_count / teacher.due_count : 0;
+      const exceptionRatio = teacher.due_count ? teacher.exception_count / teacher.due_count : 0;
+      teacherCard.innerHTML =
+        '<div class="teacher-card">' +
+          '<div class="teacher-top">' +
+            '<div><div class="teacher-name">' + esc(teacher.teacher_alias) + '</div><div class="teacher-meta">老師 ID ' + esc(teacher.teacher_id) + ' ｜周次 ' + esc(week.week_label) + ' ｜日期 ' + esc(week.start_date) + ' ~ ' + esc(week.end_date) + '</div></div>' +
+            '<div class="teacher-tag">完成率 ' + formatPct(teacher.done_rate) + '</div>' +
+          '</div>' +
+          '<div class="teacher-grid">' +
+            '<div class="panel-card">' +
+              '<h3>完成情況</h3>' +
+              '<div class="metric-row"><div class="metric-name">結課寄語</div><div class="progress"><span style="width:' + ((Number(teacher.done_rate) || 0) * 100).toFixed(1) + '%"></span></div><div class="metric-value">' + formatInt(teacher.done_count) + ' / ' + formatInt(teacher.due_count) + '</div></div>' +
+              '<div class="metric-row"><div class="metric-name">未完成</div><div class="progress"><span style="width:' + (undoneRatio * 100).toFixed(1) + '%; background:#c56d1f"></span></div><div class="metric-value">' + formatInt(teacher.undone_count) + '</div></div>' +
+              '<div class="metric-row"><div class="metric-name">異常</div><div class="progress"><span style="width:' + (exceptionRatio * 100).toFixed(1) + '%; background:#8a98a0"></span></div><div class="metric-value">' + formatInt(teacher.exception_count) + '</div></div>' +
+            '</div>' +
+            '<div class="panel-card">' +
+              '<h3>原因與名單</h3>' +
+              '<div class="reason-block"><div class="reason-title">未完成原因</div>' + reasonList(teacher.undone_reason_counts) + studentList(teacher.undone_students) + '</div>' +
+              '<div class="reason-block"><div class="reason-title">異常原因</div>' + reasonList(teacher.exception_reason_counts) + studentList(teacher.exception_students) + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    }
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      state.month = months[months.length - 1] || '';
+      state.weekLabel = selectedWeeks()[0]?.week_label || '';
+      state.teacherId = '';
+      renderSummary();
+      renderAnalysis();
+      renderMonthOptions();
+      syncTeacherSelection();
+      renderWeekOptions();
+      renderWeeklyTable();
+      renderTeacherCard();
+    });
+
+    state.weekLabel = selectedWeeks()[0]?.week_label || '';
+    renderSummary();
+    renderAnalysis();
+    renderMonthOptions();
+    syncTeacherSelection();
+    renderWeekOptions();
+    renderWeeklyTable();
+    renderTeacherCard();
+  </script>
+</body>
+</html>
