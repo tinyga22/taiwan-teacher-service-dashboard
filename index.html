@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
@@ -19,41 +19,22 @@
       --shadow: 0 20px 44px rgba(20, 37, 45, 0.08);
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Microsoft YaHei","PingFang TC","PingFang SC",sans-serif;
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Microsoft YaHei","PingFang SC",sans-serif; }
+    .wrap { max-width: 1420px; margin: 0 auto; padding: 24px 20px 40px; }
+    .hero { padding: 28px; border-radius: 24px; background: linear-gradient(135deg, var(--hero) 0%, var(--hero-soft) 100%); color: #fff; box-shadow: var(--shadow); }
+    .hero-top { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(420px, .85fr); gap: 24px; align-items: start; }
+    h1 { margin: 0; font-size: 32px; line-height: 1.15; }
+    .hero-sub { margin-top: 10px; max-width: 820px; font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.9); }
+    .switcher-shell {
+      display: flex;
+      justify-content: flex-end;
     }
-    .wrap { max-width: 1420px; margin: 0 auto; padding: 18px 20px 32px; }
-    .hero {
-      padding: 22px 26px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--hero) 0%, var(--hero-soft) 100%);
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-    .hero-top {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(420px, .85fr);
-      gap: 18px;
-      align-items: start;
-    }
-    h1 { margin: 0; font-size: 30px; line-height: 1.12; }
-    .hero-sub {
-      margin-top: 8px;
-      max-width: 760px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: rgba(255,255,255,.9);
-    }
-    .switcher-shell { display: flex; justify-content: flex-end; }
     .switcher {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 12px;
-      width: min(100%, 620px);
+      width: min(100%, 590px);
     }
     .switch-btn {
       min-width: 104px;
@@ -66,6 +47,7 @@
       cursor: pointer;
       font-size: 13px;
       font-weight: 700;
+      letter-spacing: 0;
       transition: background .16s ease, border-color .16s ease, color .16s ease, transform .16s ease;
     }
     .switch-btn:hover {
@@ -79,105 +61,38 @@
       border-color: rgba(255,255,255,.72);
       box-shadow: 0 8px 18px rgba(16, 52, 48, 0.16);
     }
-    .view { margin-top: 14px; }
-    .section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
+    .view { margin-top: 18px; }
+    .section { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
     .section + .section { margin-top: 18px; }
     .section-head { padding: 22px 24px 0; }
     .section-head h2 { margin: 0; font-size: 20px; }
     .section-head p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
-    .toolbar { display: flex; gap: 12px; align-items: end; padding: 20px 24px 0; }
+    .toolbar { display: flex; gap: 12px; align-items: end; padding: 20px 24px 24px; }
     .field { min-width: 220px; }
     .field label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 700; }
     .select-wrap { position: relative; }
-    .select-wrap::after {
-      content: "▾";
-      position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-40%);
-      color: var(--hero);
-      pointer-events: none;
-      font-size: 16px;
-    }
-    select {
-      width: 100%;
-      appearance: none;
-      border: 1px solid rgba(31,111,99,.14);
-      border-radius: 12px;
-      padding: 12px 38px 12px 14px;
-      background: #fff;
-      color: var(--text);
-      font: inherit;
-    }
+    .select-wrap::after { content: "▾"; position: absolute; right: 14px; top: 50%; transform: translateY(-40%); color: var(--hero); pointer-events: none; }
+    select { width: 100%; appearance: none; border: 1px solid rgba(31,111,99,.14); border-radius: 12px; padding: 12px 38px 12px 14px; background: #fff; color: var(--text); font: inherit; }
     .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 18px 24px 24px; }
-    .sop-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      background: linear-gradient(180deg, #fff 0%, #fbfcfc 100%);
-    }
+    .sop-card { border: 1px solid var(--line); border-radius: 18px; padding: 18px; background: linear-gradient(180deg, #fff 0%, #fbfcfc 100%); }
     .sop-card h3 { margin: 0; font-size: 18px; }
     .sop-card p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
     .metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
-    .metric-item {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px;
-      background: #fff;
-    }
+    .metric-item { border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: #fff; }
     .metric-label { font-size: 12px; color: var(--muted); }
     .metric-value { margin-top: 8px; font-size: 24px; font-weight: 700; }
     .metric-note { margin-top: 6px; font-size: 12px; color: var(--muted); line-height: 1.7; }
     .table-wrap { padding: 18px 24px 24px; overflow: auto; }
     table { width: 100%; min-width: 920px; border-collapse: collapse; }
-    th, td {
-      padding: 14px 12px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-      font-size: 14px;
-    }
+    th, td { padding: 14px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
     th { font-size: 12px; font-weight: 700; color: var(--muted); background: #f8fbfa; }
     .inline-metrics { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-    }
-    iframe {
-      width: 100%;
-      min-height: calc(100vh - 170px);
-      border: none;
-      border-radius: 20px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .placeholder-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      padding: 20px 24px 24px;
-    }
-    .placeholder-card {
-      border: 1px dashed rgba(31,111,99,.22);
-      border-radius: 18px;
-      background: #fbfdfc;
-      padding: 18px;
-    }
+    .chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; }
+    iframe { width: 100%; min-height: calc(100vh - 170px); border: none; border-radius: 20px; background: #fff; box-shadow: var(--shadow); }
+    .placeholder-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 20px 24px 24px; }
+    .placeholder-card { border: 1px dashed rgba(31,111,99,.22); border-radius: 18px; background: #fbfdfc; padding: 18px; }
     .placeholder-card h3 { margin: 0; font-size: 16px; }
     .placeholder-card p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
-    .muted-empty { color: var(--muted); }
     @media (max-width: 1040px) {
       .hero-top { grid-template-columns: 1fr; }
       .switcher-shell { justify-content: flex-start; }
@@ -194,7 +109,7 @@
       <div class="hero-top">
         <div>
           <h1>台灣教學區多 SOP 質檢看板</h1>
-          <div class="hero-sub">右上角可直接切換 SOP 匯總、正課 SOP、結課 SOP。匯總頁負責月度與周度總覽；進入單個 SOP 後，保留各自完整的看板結構，方便管理者查看，也方便老師自查。</div>
+          <div class="hero-sub">右上角可直接切換 SOP 匯總、正課 SOP、結課 SOP。匯總頁負責月度與周度總覽；進入單個 SOP 後，則保留各自完整的看板結構，方便管理者查看，也方便老師自查。</div>
         </div>
         <div class="switcher-shell"><div class="switcher" id="switcher"></div></div>
       </div>
@@ -209,91 +124,7 @@
   </div>
 
   <script>
-    const SUMMARY_DATA = {
-      monthly: [
-        {
-          month: "2026-04",
-          regular_course: {
-            signedStudents: 5210,
-            leaveStudents: 788,
-            exceptionCount: 1418,
-            metrics: [
-              { key: "pre_notice", rate: 0.2512504168056019, done: 1507, denom: 5998 },
-              { key: "post_image", rate: 0.7925143953934741, done: 4129, denom: 5210 },
-              { key: "post_file", rate: 0.7257197696737044, done: 3781, denom: 5210 },
-              { key: "post_text", rate: 0.6671785028790786, done: 3476, denom: 5210 }
-            ]
-          },
-          closure_message: null
-        },
-        {
-          month: "2026-05",
-          regular_course: {
-            signedStudents: 6004,
-            leaveStudents: 838,
-            exceptionCount: 1501,
-            metrics: [
-              { key: "pre_notice", rate: 0.3478515054077755, done: 2380, denom: 6842 },
-              { key: "post_image", rate: 0.7253497668221186, done: 4355, denom: 6004 },
-              { key: "post_file", rate: 0.6583944037308461, done: 3953, denom: 6004 },
-              { key: "post_text", rate: 0.667888074616922, done: 4010, denom: 6004 }
-            ]
-          },
-          closure_message: {
-            due_count: 25,
-            done_count: 15,
-            undone_count: 4,
-            exception_count: 6,
-            done_rate: 0.6,
-            exception_reason_counts: { "LINE中無老師消息": 6 },
-            undone_reason_counts: {
-              "存在疑似結課寄語，但超出課後48小時": 2,
-              "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 2
-            }
-          }
-        },
-        {
-          month: "2026-06",
-          regular_course: {
-            signedStudents: 1577,
-            leaveStudents: 182,
-            exceptionCount: 399,
-            metrics: [
-              { key: "pre_notice", rate: 0.36668561682774303, done: 645, denom: 1759 },
-              { key: "post_image", rate: 0.6791376030437539, done: 1071, denom: 1577 },
-              { key: "post_file", rate: 0.6582117945466075, done: 1038, denom: 1577 },
-              { key: "post_text", rate: 0.6804058338617628, done: 1073, denom: 1577 }
-            ]
-          },
-          closure_message: {
-            due_count: 5,
-            done_count: 5,
-            undone_count: 0,
-            exception_count: 0,
-            done_rate: 1,
-            exception_reason_counts: {},
-            undone_reason_counts: {}
-          }
-        }
-      ],
-      weekly: [
-        { periodKey: "2026-04_W1", periodLabel: "2026-04-01 ~ 2026-04-07", bucketLabel: "W1", regular_course: { signedStudents: 957, leaveStudents: 218, exceptionCount: 287, metrics: [{ key: "pre_notice", rate: 0.3414 }, { key: "post_image", rate: 0.867 }, { key: "post_file", rate: 0.7918 }, { key: "post_text", rate: 0.6916 }] }, closure_message: null },
-        { periodKey: "2026-04_W2", periodLabel: "2026-04-08 ~ 2026-04-14", bucketLabel: "W2", regular_course: { signedStudents: 1261, leaveStudents: 163, exceptionCount: 350, metrics: [{ key: "pre_notice", rate: 0.2811 }, { key: "post_image", rate: 0.7974 }, { key: "post_file", rate: 0.6665 }, { key: "post_text", rate: 0.6762 }] }, closure_message: null },
-        { periodKey: "2026-04_W3", periodLabel: "2026-04-15 ~ 2026-04-21", bucketLabel: "W3", regular_course: { signedStudents: 1297, leaveStudents: 179, exceptionCount: 344, metrics: [{ key: "pre_notice", rate: 0.3137 }, { key: "post_image", rate: 0.7925 }, { key: "post_file", rate: 0.765 }, { key: "post_text", rate: 0.6734 }] }, closure_message: null },
-        { periodKey: "2026-04_W4", periodLabel: "2026-04-22 ~ 2026-04-30", bucketLabel: "W4", regular_course: { signedStudents: 1695, leaveStudents: 228, exceptionCount: 437, metrics: [{ key: "pre_notice", rate: 0.3425 }, { key: "post_image", rate: 0.8002 }, { key: "post_file", rate: 0.742 }, { key: "post_text", rate: 0.6474 }] }, closure_message: null },
-        { periodKey: "2026-05_5W1", periodLabel: "2026-05-01 ~ 2026-05-03", bucketLabel: "5W1", regular_course: null, closure_message: { dueCount: 1, doneCount: 1, undoneCount: 0, exceptionCount: 0, doneRate: 1 } },
-        { periodKey: "2026-05_5W2", periodLabel: "2026-05-04 ~ 2026-05-10", bucketLabel: "5W2", regular_course: null, closure_message: { dueCount: 5, doneCount: 3, undoneCount: 1, exceptionCount: 1, doneRate: 0.6 } },
-        { periodKey: "2026-05_5W3", periodLabel: "2026-05-11 ~ 2026-05-17", bucketLabel: "5W3", regular_course: null, closure_message: { dueCount: 5, doneCount: 3, undoneCount: 0, exceptionCount: 2, doneRate: 0.6 } },
-        { periodKey: "2026-05_5W4", periodLabel: "2026-05-18 ~ 2026-05-24", bucketLabel: "5W4", regular_course: null, closure_message: { dueCount: 7, doneCount: 4, undoneCount: 1, exceptionCount: 2, doneRate: 0.5714 } },
-        { periodKey: "2026-05_5W5", periodLabel: "2026-05-25 ~ 2026-05-31", bucketLabel: "5W5", regular_course: null, closure_message: { dueCount: 7, doneCount: 4, undoneCount: 2, exceptionCount: 1, doneRate: 0.5714 } },
-        { periodKey: "2026-05_W1", periodLabel: "2026-05-01 ~ 2026-05-07", bucketLabel: "W1", regular_course: { signedStudents: 982, leaveStudents: 112, exceptionCount: 261, metrics: [{ key: "pre_notice", rate: 0.3987 }, { key: "post_image", rate: 0.762 }, { key: "post_file", rate: 0.7304 }, { key: "post_text", rate: 0.6599 }] }, closure_message: null },
-        { periodKey: "2026-05_W2", periodLabel: "2026-05-08 ~ 2026-05-14", bucketLabel: "W2", regular_course: { signedStudents: 1427, leaveStudents: 193, exceptionCount: 354, metrics: [{ key: "pre_notice", rate: 0.3754 }, { key: "post_image", rate: 0.6916 }, { key: "post_file", rate: 0.6749 }, { key: "post_text", rate: 0.638 }] }, closure_message: null },
-        { periodKey: "2026-05_W3", periodLabel: "2026-05-15 ~ 2026-05-21", bucketLabel: "W3", regular_course: { signedStudents: 1478, leaveStudents: 208, exceptionCount: 358, metrics: [{ key: "pre_notice", rate: 0.4339 }, { key: "post_image", rate: 0.7629 }, { key: "post_file", rate: 0.6954 }, { key: "post_text", rate: 0.6949 }] }, closure_message: null },
-        { periodKey: "2026-05_W4", periodLabel: "2026-05-22 ~ 2026-05-31", bucketLabel: "W4", regular_course: { signedStudents: 2117, leaveStudents: 325, exceptionCount: 528, metrics: [{ key: "pre_notice", rate: 0.4386 }, { key: "post_image", rate: 0.7932 }, { key: "post_file", rate: 0.6679 }, { key: "post_text", rate: 0.6763 }] }, closure_message: null },
-        { periodKey: "2026-06_W1", periodLabel: "2026-06-01 ~ 2026-06-07", bucketLabel: "W1", regular_course: { signedStudents: 1577, leaveStudents: 182, exceptionCount: 399, metrics: [{ key: "pre_notice", rate: 0.4668 }, { key: "post_image", rate: 0.7012 }, { key: "post_file", rate: 0.6633 }, { key: "post_text", rate: 0.6765 }] }, closure_message: { dueCount: 5, doneCount: 5, undoneCount: 0, exceptionCount: 0, doneRate: 1 } }
-      ]
-    };
-
+    const SUMMARY_DATA = {"monthly":[{"month":"2026-04","regular_course":{"signedStudents":5210,"leaveStudents":788,"exceptionCount":1418,"metrics":[{"key":"pre_notice","rate":0.2512504168056019,"done":1507,"denom":5998},{"key":"post_image","rate":0.7925143953934741,"done":4129,"denom":5210},{"key":"post_file","rate":0.7257197696737044,"done":3781,"denom":5210},{"key":"post_text","rate":0.6671785028790786,"done":3476,"denom":5210}]},"closure_message":null},{"month":"2026-05","regular_course":{"signedStudents":6004,"leaveStudents":838,"exceptionCount":1501,"metrics":[{"key":"pre_notice","rate":0.3478515054077755,"done":2380,"denom":6842},{"key":"post_image","rate":0.7253497668221186,"done":4355,"denom":6004},{"key":"post_file","rate":0.6583944037308461,"done":3953,"denom":6004},{"key":"post_text","rate":0.667888074616922,"done":4010,"denom":6004}]},"closure_message":{"due_count":25,"done_count":15,"undone_count":4,"exception_count":6,"done_rate":0.6,"exception_reason_counts":{"LINE中无老师消息":6},"undone_reason_counts":{"存在疑似结课寄语，但超出课后48小时":2,"48小时内有老师消息，但未识别到姓名或结课关键词":2}}},{"month":"2026-06","regular_course":{"signedStudents":1577,"leaveStudents":182,"exceptionCount":399,"metrics":[{"key":"pre_notice","rate":0.36668561682774303,"done":645,"denom":1759},{"key":"post_image","rate":0.6791376030437539,"done":1071,"denom":1577},{"key":"post_file","rate":0.6582117945466075,"done":1038,"denom":1577},{"key":"post_text","rate":0.6804058338617628,"done":1073,"denom":1577}]},"closure_message":null}],"weekly":[{"periodKey":"2026-04_W1","periodLabel":"2026-04-01 ~ 2026-04-07","bucketLabel":"W1","regular_course":{"signedStudents":957,"leaveStudents":218,"exceptionCount":287,"metrics":[{"key":"pre_notice","rate":0.3414},{"key":"post_image","rate":0.867},{"key":"post_file","rate":0.7918},{"key":"post_text","rate":0.6916}]},"closure_message":null},{"periodKey":"2026-04_W2","periodLabel":"2026-04-08 ~ 2026-04-14","bucketLabel":"W2","regular_course":{"signedStudents":1261,"leaveStudents":163,"exceptionCount":350,"metrics":[{"key":"pre_notice","rate":0.2811},{"key":"post_image","rate":0.7974},{"key":"post_file","rate":0.6665},{"key":"post_text","rate":0.6762}]},"closure_message":null},{"periodKey":"2026-04_W3","periodLabel":"2026-04-15 ~ 2026-04-21","bucketLabel":"W3","regular_course":{"signedStudents":1297,"leaveStudents":179,"exceptionCount":344,"metrics":[{"key":"pre_notice","rate":0.3137},{"key":"post_image","rate":0.7925},{"key":"post_file","rate":0.765},{"key":"post_text","rate":0.6734}]},"closure_message":null},{"periodKey":"2026-04_W4","periodLabel":"2026-04-22 ~ 2026-04-30","bucketLabel":"W4","regular_course":{"signedStudents":1695,"leaveStudents":228,"exceptionCount":437,"metrics":[{"key":"pre_notice","rate":0.3425},{"key":"post_image","rate":0.8002},{"key":"post_file","rate":0.742},{"key":"post_text","rate":0.6474}]},"closure_message":null},{"periodKey":"2026-05_5W1","periodLabel":"2026-05-01 ~ 2026-05-03","bucketLabel":"5W1","regular_course":null,"closure_message":{"dueCount":1,"doneCount":1,"undoneCount":0,"exceptionCount":0,"doneRate":1}},{"periodKey":"2026-05_5W2","periodLabel":"2026-05-04 ~ 2026-05-10","bucketLabel":"5W2","regular_course":null,"closure_message":{"dueCount":5,"doneCount":3,"undoneCount":1,"exceptionCount":1,"doneRate":0.6}},{"periodKey":"2026-05_5W3","periodLabel":"2026-05-11 ~ 2026-05-17","bucketLabel":"5W3","regular_course":null,"closure_message":{"dueCount":5,"doneCount":3,"undoneCount":0,"exceptionCount":2,"doneRate":0.6}},{"periodKey":"2026-05_5W4","periodLabel":"2026-05-18 ~ 2026-05-24","bucketLabel":"5W4","regular_course":null,"closure_message":{"dueCount":7,"doneCount":4,"undoneCount":1,"exceptionCount":2,"doneRate":0.5714}},{"periodKey":"2026-05_5W5","periodLabel":"2026-05-25 ~ 2026-05-31","bucketLabel":"5W5","regular_course":null,"closure_message":{"dueCount":7,"doneCount":4,"undoneCount":2,"exceptionCount":1,"doneRate":0.5714}},{"periodKey":"2026-05_W1","periodLabel":"2026-05-01 ~ 2026-05-07","bucketLabel":"W1","regular_course":{"signedStudents":982,"leaveStudents":112,"exceptionCount":261,"metrics":[{"key":"pre_notice","rate":0.3987},{"key":"post_image","rate":0.762},{"key":"post_file","rate":0.7304},{"key":"post_text","rate":0.6599}]},"closure_message":null},{"periodKey":"2026-05_W2","periodLabel":"2026-05-08 ~ 2026-05-14","bucketLabel":"W2","regular_course":{"signedStudents":1427,"leaveStudents":193,"exceptionCount":354,"metrics":[{"key":"pre_notice","rate":0.3754},{"key":"post_image","rate":0.6916},{"key":"post_file","rate":0.6749},{"key":"post_text","rate":0.638}]},"closure_message":null},{"periodKey":"2026-05_W3","periodLabel":"2026-05-15 ~ 2026-05-21","bucketLabel":"W3","regular_course":{"signedStudents":1478,"leaveStudents":208,"exceptionCount":358,"metrics":[{"key":"pre_notice","rate":0.4339},{"key":"post_image","rate":0.7629},{"key":"post_file","rate":0.6954},{"key":"post_text","rate":0.6949}]},"closure_message":null},{"periodKey":"2026-05_W4","periodLabel":"2026-05-22 ~ 2026-05-31","bucketLabel":"W4","regular_course":{"signedStudents":2117,"leaveStudents":325,"exceptionCount":528,"metrics":[{"key":"pre_notice","rate":0.4386},{"key":"post_image","rate":0.7932},{"key":"post_file","rate":0.6679},{"key":"post_text","rate":0.6763}]},"closure_message":null},{"periodKey":"2026-06_W1","periodLabel":"2026-06-01 ~ 2026-06-07","bucketLabel":"W1","regular_course":{"signedStudents":1577,"leaveStudents":182,"exceptionCount":399,"metrics":[{"key":"pre_notice","rate":0.4668},{"key":"post_image","rate":0.7012},{"key":"post_file","rate":0.6633},{"key":"post_text","rate":0.6765}]},"closure_message":null}]};
     const SOPS = [
       { key: 'summary', label: 'SOP匯總', type: 'native' },
       { key: 'regular', label: '正課SOP', type: 'iframe' },
@@ -302,30 +133,18 @@
       { key: 'change_teacher', label: '換師SOP', type: 'placeholder' },
       { key: 'new_signup', label: '新簽SOP', type: 'placeholder' }
     ];
-
-    const METRIC_LABELS = {
-      pre_notice: '課前預告',
-      post_image: '課後圖片',
-      post_file: '課後文件',
-      post_text: '課後文字'
-    };
-
     const switcher = document.getElementById('switcher');
     const summaryView = document.getElementById('view-summary');
-
     const state = {
       current: 'summary',
-      month: SUMMARY_DATA.monthly[SUMMARY_DATA.monthly.length - 1]?.month || ''
+      month: SUMMARY_DATA.monthly[0]?.month || '',
     };
 
     function formatInt(v) { return new Intl.NumberFormat('zh-Hant').format(Number(v) || 0); }
     function formatPct(v) { return ((Number(v) || 0) * 100).toFixed(1) + '%'; }
-    function monthDisplay(month) { return month ? month.replace('-', ' 年 ') + ' 月' : ''; }
 
     function renderSwitcher() {
-      switcher.innerHTML = SOPS.map((sop) =>
-        '<button class="switch-btn' + (state.current === sop.key ? ' active' : '') + '" data-key="' + sop.key + '">' + sop.label + '</button>'
-      ).join('');
+      switcher.innerHTML = SOPS.map((sop) => '<button class="switch-btn' + (state.current === sop.key ? ' active' : '') + '" data-key="' + sop.key + '">' + sop.label + '</button>').join('');
       switcher.querySelectorAll('.switch-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
           state.current = btn.dataset.key;
@@ -335,21 +154,20 @@
       });
     }
 
-    function regularMetricChips(metrics) {
-      return '<div class="inline-metrics">' + metrics.map((metric) =>
-        '<span class="chip">' + METRIC_LABELS[metric.key] + ' ' + formatPct(metric.rate) + '</span>'
-      ).join('') + '</div>';
-    }
-
     function monthlyRow(row) {
       const rc = row.regular_course;
       const cm = row.closure_message;
       return '<tr>' +
-        '<td>' + monthDisplay(row.month) + '</td>' +
-        '<td>' + (rc ? regularMetricChips(rc.metrics) : '<span class="muted-empty">尚無正課資料</span>') + '</td>' +
-        '<td>' + (rc ? formatInt(rc.signedStudents) + ' 簽到 / ' + formatInt(rc.leaveStudents) + ' 請假' : '-') + '</td>' +
-        '<td>' + (rc ? formatInt(rc.exceptionCount) : '-') + '</td>' +
-        '<td>' + (cm ? '<div class="inline-metrics"><span class="chip">完成率 ' + formatPct(cm.done_rate) + '</span><span class="chip">應完成 ' + formatInt(cm.due_count) + '</span><span class="chip">異常 ' + formatInt(cm.exception_count) + '</span></div>' : '<span class="muted-empty">尚無結課資料</span>') + '</td>' +
+        '<td>' + row.month + '</td>' +
+        '<td><div class="inline-metrics">' +
+          '<span class="chip">課前預告 ' + formatPct(rc.metrics[0].rate) + '</span>' +
+          '<span class="chip">課後圖片 ' + formatPct(rc.metrics[1].rate) + '</span>' +
+          '<span class="chip">課後文件 ' + formatPct(rc.metrics[2].rate) + '</span>' +
+          '<span class="chip">課後文字 ' + formatPct(rc.metrics[3].rate) + '</span>' +
+        '</div></td>' +
+        '<td>' + formatInt(rc.signedStudents) + ' 簽到 / ' + formatInt(rc.leaveStudents) + ' 請假</td>' +
+        '<td>' + formatInt(rc.exceptionCount) + '</td>' +
+        '<td>' + (cm ? '<div class="inline-metrics"><span class="chip">結課寄語 ' + formatPct(cm.done_rate) + '</span><span class="chip">應完成 ' + formatInt(cm.due_count) + '</span></div>' : '<span style="color:#68767c">本月暫無資料</span>') + '</td>' +
       '</tr>';
     }
 
@@ -359,62 +177,57 @@
       return '<tr>' +
         '<td>' + row.bucketLabel + '</td>' +
         '<td>' + row.periodLabel + '</td>' +
-        '<td>' + (rc ? regularMetricChips(rc.metrics) : '<span class="muted-empty">本周無正課資料</span>') + '</td>' +
+        '<td>' + (rc ? '<div class="inline-metrics"><span class="chip">預告 ' + formatPct(rc.metrics[0].rate) + '</span><span class="chip">圖片 ' + formatPct(rc.metrics[1].rate) + '</span><span class="chip">文件 ' + formatPct(rc.metrics[2].rate) + '</span><span class="chip">文字 ' + formatPct(rc.metrics[3].rate) + '</span></div>' : '<span style="color:#68767c">暫無資料</span>') + '</td>' +
         '<td>' + (rc ? formatInt(rc.signedStudents) + ' 簽到 / ' + formatInt(rc.leaveStudents) + ' 請假' : '-') + '</td>' +
         '<td>' + (rc ? formatInt(rc.exceptionCount) : '-') + '</td>' +
-        '<td>' + (cm ? '<div class="inline-metrics"><span class="chip">完成率 ' + formatPct(cm.doneRate) + '</span><span class="chip">應完成 ' + formatInt(cm.dueCount) + '</span><span class="chip">異常 ' + formatInt(cm.exceptionCount) + '</span></div>' : '<span class="muted-empty">本周無結課資料</span>') + '</td>' +
+        '<td>' + (cm ? '<div class="inline-metrics"><span class="chip">完成率 ' + formatPct(cm.doneRate) + '</span><span class="chip">應完成 ' + formatInt(cm.dueCount) + '</span><span class="chip">異常 ' + formatInt(cm.exceptionCount) + '</span></div>' : '<span style="color:#68767c">暫無資料</span>') + '</td>' +
       '</tr>';
     }
 
     function renderSummaryView() {
-      const monthOptions = SUMMARY_DATA.monthly.map((row) =>
-        '<option value="' + row.month + '">' + monthDisplay(row.month) + '</option>'
-      ).join('');
+      const monthOptions = SUMMARY_DATA.monthly.map((row) => '<option value="' + row.month + '">' + row.month.replace('-', ' 年 ') + ' 月</option>').join('');
       const selectedMonth = SUMMARY_DATA.monthly.find((row) => row.month === state.month) || SUMMARY_DATA.monthly[0];
       const weeklyRows = SUMMARY_DATA.weekly.filter((row) => String(row.periodKey).startsWith(state.month));
-      const regular = selectedMonth?.regular_course;
-      const closure = selectedMonth?.closure_message;
 
       summaryView.innerHTML = '' +
         '<section class="section">' +
-          '<div class="section-head"><h2>SOP 匯總</h2><p>這裡先看整體月度與周度輪廓，再按右上角切換到單一 SOP 看板查看完整明細。正課 SOP 沿用你已確認的看板樣式；結課 SOP 也在同一入口下切換查看。</p></div>' +
+          '<div class="section-head"><h2>SOP ??</h2><p>??????? SOP ?????????????????????????????????????????</p></div>' +
           '<div style="height:24px"></div>' +
         '</section>' +
         '<section class="section">' +
-          '<div class="toolbar"><div class="field"><label>月份</label><div class="select-wrap"><select id="monthFilter">' + monthOptions + '</select></div></div></div>' +
-          '<div class="section-head"><h2>月度匯總</h2><p>本區同時展示正課 SOP 與結課 SOP 的月度總覽，方便管理者先看當月完成輪廓，再往下看月度明細與周度拆解。</p></div>' +
+          '<div class="toolbar"><div class="field"><label>??</label><div class="select-wrap"><select id="monthFilter">' + monthOptions + '</select></div></div></div>' +
+          '<div class="section-head"><h2>????</h2><p>????????????? SOP ??? SOP ?????????? SOP ?????????</p></div>' +
           '<div class="cards">' +
-            '<div class="sop-card"><h3>正課 SOP</h3><p>課前預告分母為簽到學員加請假學員；課後圖片、課後文件、課後文字分母為簽到學員。異常數為無法建立有效匹配或需剔除的樣本。</p><div class="metric-grid">' +
-              (regular ? regular.metrics.map((metric) =>
-                '<div class="metric-item"><div class="metric-label">' + METRIC_LABELS[metric.key] + '</div><div class="metric-value">' + formatPct(metric.rate) + '</div><div class="metric-note">完成 ' + formatInt(metric.done) + ' / 分母 ' + formatInt(metric.denom) + '</div></div>'
-              ).join('') : '<div class="metric-item"><div class="metric-label">正課資料</div><div class="metric-value">-</div><div class="metric-note">本月尚無正課資料</div></div>') +
+            '<div class="sop-card"><h3>?? SOP</h3><p>????????????????????????????????????????????????</p><div class="metric-grid">' +
+              selectedMonth.regular_course.metrics.map((metric, index) => {
+                const labels = ['????', '????', '????', '????'];
+                return '<div class="metric-item"><div class="metric-label">' + labels[index] + '</div><div class="metric-value">' + formatPct(metric.rate) + '</div><div class="metric-note">?? ' + formatInt(metric.done) + ' / ??? ' + formatInt(metric.denom) + '</div></div>';
+              }).join('') +
             '</div></div>' +
-            '<div class="sop-card"><h3>結課 SOP</h3><p>結課 SOP 以結課日期歸屬月為準，判斷老師是否在結課日期後 48 小時內完成結課寄語。</p><div class="metric-grid">' +
-              (closure ? [
-                ['結課寄語完成率', formatPct(closure.done_rate), '完成 ' + formatInt(closure.done_count) + ' / 應完成 ' + formatInt(closure.due_count)],
-                ['未完成數', formatInt(closure.undone_count), '存在老師消息但未命中完成規則的樣本'],
-                ['異常數', formatInt(closure.exception_count), 'LINE 中無法建立有效老師消息關聯的樣本'],
-                ['覆蓋月份', monthDisplay(selectedMonth.month), '本月已匯入的結課 SOP 統計區間']
+            '<div class="sop-card"><h3>?? SOP</h3><p>???????? 48 ???????????????????????????????</p><div class="metric-grid">' +
+              (selectedMonth.closure_message ? [
+                ['???????', formatPct(selectedMonth.closure_message.done_rate), '??? ' + formatInt(selectedMonth.closure_message.done_count) + ' / ??? ' + formatInt(selectedMonth.closure_message.due_count)],
+                ['????', formatInt(selectedMonth.closure_message.undone_count), '??????????????'],
+                ['???', formatInt(selectedMonth.closure_message.exception_count), 'LINE ?????????????'],
+                ['????', selectedMonth.month, '????????????'],
               ] : [
-                ['結課寄語完成率', '-', '本月尚無結課 SOP 資料'],
-                ['未完成數', '-', ''],
-                ['異常數', '-', ''],
-                ['覆蓋月份', monthDisplay(selectedMonth.month), '']
-              ]).map(([label, value, note]) =>
-                '<div class="metric-item"><div class="metric-label">' + label + '</div><div class="metric-value">' + value + '</div><div class="metric-note">' + note + '</div></div>'
-              ).join('') +
+                ['???????', '????', '???????? SOP'],
+                ['????', '-', ''],
+                ['???', '-', ''],
+                ['????', selectedMonth.month, ''],
+              ]).map(([label, value, note]) => '<div class="metric-item"><div class="metric-label">' + label + '</div><div class="metric-value">' + value + '</div><div class="metric-note">' + note + '</div></div>').join('') +
             '</div></div>' +
           '</div>' +
         '</section>' +
         '<section class="section">' +
-          '<div class="section-head"><h2>月度明細表</h2></div>' +
-          '<div class="table-wrap"><table><thead><tr><th>月份</th><th>正課 SOP 核心指標</th><th>正課 SOP 樣本</th><th>正課 SOP 異常</th><th>結課 SOP</th></tr></thead><tbody>' +
+          '<div class="section-head"><h2>?????</h2></div>' +
+          '<div class="table-wrap"><table><thead><tr><th>??</th><th>?? SOP ????</th><th>?? SOP ??</th><th>?? SOP ??</th><th>?? SOP</th></tr></thead><tbody>' +
             SUMMARY_DATA.monthly.map(monthlyRow).join('') +
           '</tbody></table></div>' +
         '</section>' +
         '<section class="section">' +
-          '<div class="section-head"><h2>周度匯總</h2><p>切換月份後，這裡展示該月份下已匯入的所有周次情況。正課 SOP 與結課 SOP 按各自已有周資料呈現，不強行補空周。</p></div>' +
-          '<div class="table-wrap"><table><thead><tr><th>周次</th><th>日期範圍</th><th>正課 SOP</th><th>正課 SOP 樣本</th><th>正課 SOP 異常</th><th>結課 SOP</th></tr></thead><tbody>' +
+          '<div class="section-head"><h2>????</h2><p>??????????????????????? SOP ???????????</p></div>' +
+          '<div class="table-wrap"><table><thead><tr><th>??</th><th>????</th><th>?? SOP</th><th>?? SOP ??</th><th>?? SOP ??</th><th>?? SOP</th></tr></thead><tbody>' +
             weeklyRows.map(weeklyRow).join('') +
           '</tbody></table></div>' +
         '</section>';
@@ -429,13 +242,7 @@
 
     function renderPlaceholderView(id, title) {
       const view = document.getElementById('view-' + id);
-      view.innerHTML =
-        '<section class="section"><div class="section-head"><h2>' + title + '</h2><p>這個 SOP 的容器已先預留好。之後只要把對應的月周匯總資料與老師明細接進來，就能沿用同一套切換結構，不需要重做整個公開看板。</p></div>' +
-        '<div class="placeholder-grid">' +
-          '<div class="placeholder-card"><h3>資料入口</h3><p>接入 BI 明細、LINE 質檢包與異常剔除規則。</p></div>' +
-          '<div class="placeholder-card"><h3>月周匯總</h3><p>沿用統一資料結構，自動進入 SOP 匯總頁與獨立 SOP 頁。</p></div>' +
-          '<div class="placeholder-card"><h3>老師自查</h3><p>保留月份、周次、老師篩選，一頁展示未完成與異常原因。</p></div>' +
-        '</div></section>';
+      view.innerHTML = '<section class="section"><div class="section-head"><h2>' + title + '</h2><p>這個 SOP 的容器已經預留好，後續只要把對應的月周匯總資料和老師明細接進來，就能沿用同一套切換體驗。</p></div><div class="placeholder-grid"><div class="placeholder-card"><h3>資料入口</h3><p>接入 BI 名單、LINE 對話證據與異常剔除規則。</p></div><div class="placeholder-card"><h3>月周匯總</h3><p>遵循統一資料結構，自動出現在 SOP 匯總頁與獨立 SOP 頁。</p></div><div class="placeholder-card"><h3>老師自查</h3><p>保留月份、周次、老師篩選，統一展示未完成與異常原因。</p></div></div></section>';
     }
 
     function renderViews() {
