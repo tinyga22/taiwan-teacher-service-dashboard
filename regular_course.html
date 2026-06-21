@@ -11493,6 +11493,13 @@
       const text = safeText(reason);
       return text || "未識別到可歸因文案，建議回看原始對話時間窗";
     };
+    const normalizeAttendance = value => {
+      const text = String(value || "").replace(/\s+/g, "");
+      if (text.includes("签到") || text.includes("簽到") || text.includes("已签到") || text.includes("已簽到") || text.includes("��ǩ��")) return "signed";
+      if (text.includes("请假") || text.includes("請假") || text.includes("���")) return "leave";
+      if (text.includes("取消") || text.includes("ȡ��")) return "cancel";
+      return text;
+    };
     const months = Object.values(DATA.periods.reduce((acc, period) => {
       const monthKey = monthKeyFromPeriod(period.key);
       if (!acc[monthKey]) {
@@ -11674,11 +11681,9 @@
     function getIssueStudents(periodKey, teacherId, metricKey, reason) {
       const normalized = (reason || '').trim();
       const filterByAttendance = (students) => students.filter(item => {
-        const attendance = String(item.attendance || '').replace(/\s+/g, '');
-        const isSigned = attendance.includes('签到') || attendance.includes('簽到');
-        const isLeave = attendance.includes('请假') || attendance.includes('請假');
-        if (metricKey === 'pre') return isSigned || isLeave;
-        return isSigned;
+        const attendance = normalizeAttendance(item.attendance || '');
+        if (metricKey === 'pre') return attendance === "signed" || attendance === "leave";
+        return attendance === "signed";
       });
       const candidates = [
         [periodKey, teacherId, metricKey, normalized || '__EMPTY__'].join('|'),
