@@ -47,6 +47,7 @@
     .analysis strong { color: var(--text); }
     .analysis-label { color: var(--accent); font-weight: 700; }
     .teacher-panel { padding: 20px 24px 24px; }
+    .teacher-week-panel { padding: 20px 24px 24px; }
     .filter-row { display: grid; grid-template-columns: 1fr 1fr 1.1fr 1fr auto; gap: 12px; align-items: end; }
     .field label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 700; color: var(--text); }
     .select-wrap { position: relative; }
@@ -138,6 +139,30 @@
         </table>
       </div>
       <div class="analysis" id="analysisBlock"></div><div class="footer"><div class="footer-box" id="footerInfo"></div></div></section>
+    <section class="section">
+      <div class="section-head">
+        <h2>當周老師完成率</h2>
+        <p>點擊上方周度後，這裡會同步展示該周所有老師的四項完成率與樣本數，方便先看全體分佈，再往下做個人自查。</p>
+      </div>
+      <div class="teacher-week-panel">
+        <div class="table-wrap" style="padding:0;overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>老師</th>
+                <th>老師 ID</th>
+                <th>課前預告</th>
+                <th>課後圖片</th>
+                <th>課後文件</th>
+                <th>課後文字</th>
+                <th>簽到 / 請假</th>
+              </tr>
+            </thead>
+            <tbody id="teacherWeekTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
     <section class="section">
       <div class="section-head">
         <h2>老師自查</h2>
@@ -11460,6 +11485,7 @@
     const weekTableBody = document.getElementById("weekTableBody");
     const weekHeadNote = document.getElementById("weekHeadNote");
     const analysisBlock = document.getElementById("analysisBlock");
+    const teacherWeekTableBody = document.getElementById("teacherWeekTableBody");
     const teacherCard = document.getElementById("teacherCard"); const footerInfo = document.getElementById("footerInfo");
     const monthKeyFromPeriod = key => key.slice(0, 7);
     const pct = value => `${(Number(value || 0) * 100).toFixed(1)}%`;
@@ -11614,6 +11640,31 @@
         `<p><span class="analysis-label">關注重點：</span>從月度均值來看，當前最需要關注的是 <strong>${weakest[0]}</strong>，月度均值為 <strong>${pct(weakest[1])}</strong>。課前高頻問題集中在 <strong>${topIssue(periods, teacher => teacher.pre_reasons)}</strong>；課後文字高頻問題集中在 <strong>${topIssue(periods, teacher => teacher.text_reasons)}</strong>。</p>`,
       ].join(""); footerInfo.innerHTML = `更新時間：2026-06-13 19:00（Asia/Shanghai）<br>統計範圍：2026-04、2026-05 與 2026-06 W1 的台灣教學區質檢樣本。<br>頁面用途：管理者查看月度與周度概況；老師按周次進行個人自查。`;
     }
+    function renderTeacherWeekTable() {
+      const teachers = (currentPeriod().teachers || []).slice().sort((a, b) => {
+        const preDiff = Number(b.pre_rate || 0) - Number(a.pre_rate || 0);
+        if (Math.abs(preDiff) > 1e-9) return preDiff;
+        return String(a.teacher_alias || '').localeCompare(String(b.teacher_alias || ''));
+      });
+      teacherWeekTableBody.innerHTML = teachers.map(teacher => `
+        <tr data-teacher="${teacher.teacher_id}" class="${teacher.teacher_id === teacherSelect.value ? "active" : ""}">
+          <td><strong>${teacher.teacher_alias}</strong></td>
+          <td>${teacher.teacher_id}</td>
+          <td class="rate">${pct(teacher.pre_rate)} <span class="muted">(${num(teacher.pre_done)}/${num(teacher.pre_denom)})</span></td>
+          <td class="rate">${pct(teacher.image_rate)} <span class="muted">(${num(teacher.image_done)}/${num(teacher.image_denom)})</span></td>
+          <td class="rate">${pct(teacher.file_rate)} <span class="muted">(${num(teacher.file_done)}/${num(teacher.file_denom)})</span></td>
+          <td class="rate">${pct(teacher.text_rate)} <span class="muted">(${num(teacher.text_done)}/${num(teacher.text_denom)})</span></td>
+          <td>${num(teacher.signed_students)} / ${num(teacher.leave_students)}</td>
+        </tr>
+      `).join("");
+      teacherWeekTableBody.querySelectorAll("tr").forEach(row => {
+        row.addEventListener("click", () => {
+          teacherSelect.value = row.dataset.teacher;
+          renderTeacherWeekTable();
+          renderTeacherCard();
+        });
+      });
+    }
     function syncPeriods() {
       const periods = periodsForCurrentMonth();
       periodSelect.innerHTML = periods.map(period => `<option value="${period.key}">${weekLabel(period.key)}｜${period.label}</option>`).join("");
@@ -11718,6 +11769,7 @@
       renderWeekTable();
       renderAnalysis();
       renderTeacherOptions();
+      renderTeacherWeekTable();
       renderTeacherCard();
     }
     monthSelect.innerHTML = months.map(month => `<option value="${month.key}">${month.label}</option>`).join("");
