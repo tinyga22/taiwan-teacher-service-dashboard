@@ -11476,10 +11476,6 @@
     const teacherSelect = document.getElementById("teacherSelect");
     const focusSelect = document.getElementById("focusSelect");
     const resetBtn = document.getElementById("resetBtn");
-    const heroSub = document.getElementById("heroSub");
-    const pillTeachers = document.getElementById("pillTeachers");
-    const pillPeriods = document.getElementById("pillPeriods");
-    const pillExceptions = document.getElementById("pillExceptions");
     const summaryGrid = document.getElementById("summaryGrid");
     const monthTableBody = document.getElementById("monthTableBody");
     const weekTableBody = document.getElementById("weekTableBody");
@@ -11557,12 +11553,6 @@
       }));
       const top = Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0];
       return top ? `${top[0]}（${top[1]} 次）` : "本月暫無異常原因記錄";
-    }
-    function renderHero() {
-      heroSub.textContent = "適用於台灣教學區老師服務自查與管理復盤，支持按月份與周次切換查看。";
-      pillTeachers.textContent = `老師數 ${num(DATA.overall.teacher_count)}`;
-      pillPeriods.textContent = `周次 ${num(DATA.overall.period_count)}`;
-      pillExceptions.textContent = `異常剔除 ${num(DATA.overall.exception_count)}`;
     }
     function renderMonthSummary() {
       const month = currentMonth();
@@ -11763,7 +11753,6 @@
       `;
     }
     function renderAll() {
-      renderHero();
       renderMonthSummary();
       renderMonthTable();
       renderWeekTable();
