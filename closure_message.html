@@ -9,9 +9,6 @@
       --bg:#f5f7f6;--panel:#fff;--hero:#1f6f63;--hero-soft:#2b8777;--text:#173038;--muted:#68767c;--line:rgba(19,48,56,.08);--accent:#1d745f;--warn:#c56d1f;--track:#e8eeeb;--shadow:0 18px 40px rgba(20,37,45,.06);
     }
     *{box-sizing:border-box} body{margin:0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;color:var(--text);background:var(--bg)} .wrap{max-width:1360px;margin:0 auto;padding:24px 20px 40px}
-    .hero{background:linear-gradient(135deg,var(--hero) 0%,var(--hero-soft) 100%);color:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow)} .hero-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
-    h1{margin:0;font-size:32px;line-height:1.15} .hero-sub{margin-top:10px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.9);max-width:760px}
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}.pill{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.12);color:#fff;padding:10px 14px;border-radius:999px;font-size:13px;font-weight:700}
     .section{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)} .section-head{padding:22px 24px 0}.section-head h2{margin:0;font-size:20px}.section-head p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.7}
     .summary-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:20px 24px 24px}.stat-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.stat-label{font-size:12px;color:var(--muted)}.stat-value{margin-top:8px;font-size:26px;font-weight:700}.stat-note{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.6}
     .table-wrap{padding:18px 24px 24px;overflow:auto} table{width:100%;border-collapse:collapse;min-width:920px} th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top} th{color:var(--muted);font-size:12px;font-weight:700;background:#f8fbfa} tbody tr:hover{background:#f6fbf8}
@@ -21,12 +18,11 @@
     .teacher-grid{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,1fr);gap:16px}.panel-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}.panel-card h3{margin:0 0 12px;font-size:16px}.metric-row{display:grid;grid-template-columns:170px 1fr 92px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.metric-row:last-child{border-bottom:none}.progress{height:10px;border-radius:999px;background:var(--track);overflow:hidden}.progress>span{display:block;height:100%;background:var(--accent)}.metric-value{text-align:right;font-size:14px;font-weight:700}
     .reason-block+.reason-block{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.reason-title{margin:0 0 8px;font-size:15px;font-weight:700}.reason-summary{color:var(--muted);font-size:13px;line-height:1.7}.student-list{margin-top:8px;max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fbfdfc}.student-item{display:flex;justify-content:space-between;gap:10px;font-size:12px;line-height:1.7;color:var(--text);border-bottom:1px dashed rgba(19,48,56,.08);padding:6px 0}.student-item:last-child{border-bottom:none}.empty{padding:36px 16px;text-align:center;color:var(--muted);font-size:14px}
     .footer{padding:0 24px 24px}.footer-box{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12px;line-height:1.8}
-    @media (max-width:1120px){.summary-grid,.filter-row,.teacher-grid{grid-template-columns:1fr}.hero-top,.teacher-top{flex-direction:column}.pill-row{justify-content:flex-start}}
+    @media (max-width:1120px){.summary-grid,.filter-row,.teacher-grid{grid-template-columns:1fr}.teacher-top{flex-direction:column}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <section class="hero"><div class="hero-top"><div><h1>&#21488;&#28771;&#25945;&#23416;&#21312;&#32080;&#35506; SOP &#30475;&#26495;</h1><div class="hero-sub" id="heroSub"></div></div><div class="pill-row"><div class="pill" id="pillTeachers"></div><div class="pill" id="pillWeeks"></div><div class="pill" id="pillExceptions"></div></div></div></section>
     <section class="section"><div class="section-head"><h2>&#26376;&#24230;&#21295;&#32317;</h2><p>&#20197;&#32080;&#35506;&#26085;&#26399;&#33853;&#22312;&#25152;&#36984;&#26376;&#20221;&#12289;&#19988;&#32080;&#35506;&#27512;&#23660;&#32769;&#24107;&#23660;&#26044;&#21488;&#28771;&#25945;&#23416;&#26381;&#21209;&#21312;&#28858;&#21475;&#24465;&#65292;&#21028;&#26039;&#32769;&#24107;&#26159;&#21542;&#22312;&#32080;&#35506;&#24460; 48 &#23567;&#26178;&#20839;&#30332;&#36865;&#32080;&#35506;&#23592;&#35486;&#12290;</p></div><div class="summary-grid" id="summaryGrid"></div></section>
     <section class="section"><div class="section-head"><h2>&#21608;&#24230;&#24773;&#27841;</h2><p>&#40670;&#25802;&#21608;&#27425;&#24460;&#65292;&#19979;&#26041;&#32769;&#24107;&#33258;&#26597;&#26371;&#21516;&#27493;&#20999;&#25563;&#21040;&#23565;&#25033;&#21608;&#24230;&#26126;&#32048;&#12290;</p></div><div class="table-wrap"><table><thead><tr><th>&#21608;&#27425;</th><th>&#26085;&#26399;&#31684;&#22285;</th><th>&#25033;&#23436;&#25104;&#25976;</th><th>&#24050;&#23436;&#25104;&#25976;</th><th>&#26410;&#23436;&#25104;&#25976;</th><th>&#30064;&#24120;&#25976;</th><th>&#23436;&#25104;&#29575;</th></tr></thead><tbody id="weeklyTableBody"></tbody></table></div></section>
     <section class="section"><div class="section-head"><h2>&#30475;&#26495;&#35498;&#26126;</h2></div><div class="analysis" id="analysisText"></div></section>
@@ -43,10 +39,6 @@
     const weeklyTableBody = document.getElementById('weeklyTableBody');
     const summaryGrid = document.getElementById('summaryGrid');
     const teacherCard = document.getElementById('teacherCard');
-    const heroSub = document.getElementById('heroSub');
-    const pillTeachers = document.getElementById('pillTeachers');
-    const pillWeeks = document.getElementById('pillWeeks');
-    const pillExceptions = document.getElementById('pillExceptions');
     const analysisText = document.getElementById('analysisText');
     function formatInt(v){return new Intl.NumberFormat('zh-Hant').format(Number(v)||0)}
     function formatPct(v){return ((Number(v)||0)*100).toFixed(1)+'%'}
@@ -54,7 +46,6 @@
     function currentMonth(){return months.find(m=>m.month===state.month)||months[0]||null}
     function currentWeek(){const m=currentMonth();return m?.weekly_summary?.find(w=>w.week_label===state.week)||m?.weekly_summary?.[0]||null}
     function teacherName(t){return t.teacher_alias||('\u8001\u5e2b ID ' + t.teacher_id)}
-    function updateHero(){const allWeeks=months.flatMap(m=>m.weekly_summary||[]);const totalTeachers=new Set(allWeeks.flatMap(w=>(w.teachers||[]).map(t=>t.teacher_id))).size;const totalExceptions=allWeeks.reduce((s,w)=>s+Number(w.exception_count||0),0);heroSub.textContent='\u672c\u770b\u677f\u7528\u65bc\u8ffd\u8e64\u53f0\u7063\u6559\u5b78\u5340\u7d50\u8ab2 SOP \u5b8c\u6210\u60c5\u6cc1\uff0c\u4ee5\u7d50\u8ab2\u65e5\u671f\u843d\u5728\u6240\u9078\u6708\u4efd\uff0c\u4e14\u7d50\u8ab2\u6b78\u5c6c\u8001\u5e2b\u5c6c\u65bc\u53f0\u7063\u6559\u5b78\u670d\u52d9\u5340\u70ba\u53e3\u5f91\uff0c\u5224\u65b7\u8001\u5e2b\u662f\u5426\u5728\u7d50\u8ab2\u5f8c 48 \u5c0f\u6642\u5167\u767c\u9001\u7d50\u8ab2\u5bc4\u8a9e\u3002';pillTeachers.textContent='\u8001\u5e2b ' + formatInt(totalTeachers) + ' \u4f4d';pillWeeks.textContent='\u9031\u6b21 ' + formatInt(allWeeks.length) + ' \u500b';pillExceptions.textContent='\u7570\u5e38 ' + formatInt(totalExceptions) + ' \u7b46'}
     function renderMonthOptions(){monthSelect.innerHTML=months.map(m=>`<option value="${m.month}">${m.month}</option>`).join('');monthSelect.value=state.month}
     function renderWeekOptions(){const weeks=currentMonth()?.weekly_summary||[];if(!weeks.find(w=>w.week_label===state.week))state.week=weeks[0]?.week_label||'';weekSelect.innerHTML=weeks.map(w=>`<option value="${w.week_label}">${w.week_label}\uff5c${w.start_date} ~ ${w.end_date}</option>`).join('');weekSelect.value=state.week}
     function renderTeacherOptions(){const teachers=currentWeek()?.teachers||[];if(!teachers.find(t=>t.teacher_id===state.teacherId))state.teacherId=teachers[0]?.teacher_id||'';teacherSelect.innerHTML=teachers.map(t=>`<option value="${t.teacher_id}">${esc(teacherName(t))}</option>`).join('');teacherSelect.value=state.teacherId}
@@ -68,7 +59,7 @@
     weekSelect.addEventListener('change',()=>{state.week=weekSelect.value;renderTeacherOptions();renderWeeklyTable();renderTeacherCard()});
     teacherSelect.addEventListener('change',()=>{state.teacherId=teacherSelect.value;renderTeacherCard()});
     document.getElementById('resetBtn').addEventListener('click',()=>{state.month=months[months.length-1]?.month||'';state.week='';state.teacherId='';renderMonthOptions();renderWeekOptions();renderTeacherOptions();renderSummary();renderWeeklyTable();renderAnalysis();renderTeacherCard()});
-    updateHero();renderMonthOptions();renderWeekOptions();renderTeacherOptions();renderSummary();renderWeeklyTable();renderAnalysis();renderTeacherCard();
+    renderMonthOptions();renderWeekOptions();renderTeacherOptions();renderSummary();renderWeeklyTable();renderAnalysis();renderTeacherCard();
   </script>
 </body>
 </html>
