@@ -11686,6 +11686,15 @@
         if (metricKey === 'pre') return attendance === "signed" || attendance === "leave";
         return attendance === "signed";
       });
+      const dedupeStudents = (students) => {
+        const seen = new Set();
+        return students.filter(item => {
+          const key = [item.student_id || '', item.class_date || '', item.attendance || ''].join('|');
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+      };
       const candidates = [
         [periodKey, teacherId, metricKey, normalized || '__EMPTY__'].join('|'),
         [periodKey, teacherId, metricKey, normalized].join('|'),
@@ -11694,15 +11703,12 @@
       for (const key of candidates) {
         if (ISSUE_STUDENTS[key] && ISSUE_STUDENTS[key].length) return filterByAttendance(ISSUE_STUDENTS[key]);
       }
-      if (!normalized) {
-        const prefix = [periodKey, teacherId, metricKey].join('|') + '|';
-        const merged = [];
-        for (const [key, students] of Object.entries(ISSUE_STUDENTS)) {
-          if (key.startsWith(prefix)) merged.push(...students);
-        }
-        return filterByAttendance(merged);
+      const prefix = [periodKey, teacherId, metricKey].join('|') + '|';
+      const merged = [];
+      for (const [key, students] of Object.entries(ISSUE_STUDENTS)) {
+        if (key.startsWith(prefix)) merged.push(...students);
       }
-      return [];
+      return dedupeStudents(filterByAttendance(merged));
     }
     function renderTeacherCard() {
       const teachers = filteredTeachers(currentPeriod().teachers || []);
