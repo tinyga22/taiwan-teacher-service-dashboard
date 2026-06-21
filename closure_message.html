@@ -3,341 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>台湾教学区结课 SOP 看板</title>
+  <title>&#21488;&#28771;&#25945;&#23416;&#21312;&#32080;&#35506; SOP &#30475;&#26495;</title>
   <style>
-    :root {{
-      --bg: #f5f7f6;
-      --panel: #ffffff;
-      --hero: #1f6f63;
-      --hero-soft: #2b8777;
-      --text: #173038;
-      --muted: #68767c;
-      --line: rgba(19, 48, 56, 0.08);
-      --accent: #1d745f;
-      --warn: #c56d1f;
-      --soft: #eef4f1;
-      --shadow: 0 18px 40px rgba(20, 37, 45, 0.06);
-    }}
-    * {{ box-sizing: border-box; }}
-    body {{ margin: 0; font-family: "Microsoft YaHei","PingFang SC",sans-serif; color: var(--text); background: var(--bg); }}
-    .wrap {{ max-width: 1360px; margin: 0 auto; padding: 24px 20px 40px; }}
-    .hero {{ background: linear-gradient(135deg, var(--hero) 0%, var(--hero-soft) 100%); color: #fff; border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }}
-    .hero-top {{ display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; }}
-    h1 {{ margin: 0; font-size: 32px; line-height: 1.15; }}
-    .hero-sub {{ margin-top: 10px; font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.9); max-width: 760px; }}
-    .pill-row {{ display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }}
-    .pill {{ border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.12); color: #fff; padding: 10px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; }}
-    .section {{ margin-top: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }}
-    .section-head {{ padding: 22px 24px 0; }}
-    .section-head h2 {{ margin: 0; font-size: 20px; }}
-    .section-head p {{ margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }}
-    .summary-grid {{ display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; padding: 20px 24px 24px; }}
-    .stat-card {{ background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px; }}
-    .stat-label {{ font-size: 12px; color: var(--muted); }}
-    .stat-value {{ margin-top: 8px; font-size: 26px; font-weight: 700; }}
-    .stat-note {{ margin-top: 6px; font-size: 12px; color: var(--muted); line-height: 1.6; }}
-    .table-wrap {{ padding: 18px 24px 24px; overflow: auto; }}
-    table {{ width: 100%; border-collapse: collapse; min-width: 920px; }}
-    th, td {{ padding: 14px 12px; border-bottom: 1px solid var(--line); text-align: left; font-size: 14px; vertical-align: top; }}
-    th {{ color: var(--muted); font-size: 12px; font-weight: 700; background: #f8fbfa; }}
-    tbody tr:hover {{ background: #f6fbf8; }}
-    .analysis {{ padding: 18px 24px 24px; }}
-    .analysis p {{ margin: 0 0 12px; font-size: 14px; line-height: 1.9; color: #33464d; }}
-    .teacher-panel {{ padding: 20px 24px 24px; }}
-    .filter-row {{ display: grid; grid-template-columns: 1fr 1fr 1.1fr auto; gap: 12px; align-items: end; }}
-    .field label {{ display: block; margin-bottom: 6px; font-size: 13px; font-weight: 700; }}
-    .select-wrap {{ position: relative; }}
-    .select-wrap::after {{ content: "\25BE"; position: absolute; right: 14px; top: 50%; transform: translateY(-40%); color: var(--hero); pointer-events: none; }}
-    select, button {{ font: inherit; }}
-    select {{ width: 100%; appearance: none; border: 1px solid rgba(31,111,99,.14); border-radius: 12px; padding: 12px 38px 12px 14px; background: #fff; color: var(--text); }}
-    .reset-btn {{ height: 44px; padding: 0 16px; border: 1px solid rgba(31,111,99,.12); border-radius: 12px; background: #f5faf8; color: var(--hero); cursor: pointer; font-weight: 700; }}
-    .teacher-card {{ margin-top: 18px; border: 1px solid var(--line); border-radius: 18px; background: #fbfcfc; padding: 18px; }}
-    .teacher-top {{ display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }}
-    .teacher-name {{ font-size: 24px; font-weight: 700; }}
-    .teacher-meta {{ margin-top: 6px; font-size: 13px; color: var(--muted); line-height: 1.7; }}
-    .teacher-tag {{ white-space: nowrap; background: #e9f5ef; color: var(--accent); border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; }}
-    .teacher-grid {{ margin-top: 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 1fr); gap: 16px; }}
-    .panel-card {{ border: 1px solid var(--line); border-radius: 16px; background: #fff; padding: 16px; }}
-    .panel-card h3 {{ margin: 0 0 12px; font-size: 16px; }}
-    .metric-row {{ display: grid; grid-template-columns: 170px 1fr 92px; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }}
-    .metric-row:last-child {{ border-bottom: none; }}
-    .progress {{ height: 10px; border-radius: 999px; background: #e8eeeb; overflow: hidden; }}
-    .progress > span {{ display: block; height: 100%; background: var(--accent); }}
-    .metric-value {{ text-align: right; font-size: 14px; font-weight: 700; }}
-    .reason-block + .reason-block {{ margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }}
-    .reason-title {{ margin: 0 0 8px; font-size: 15px; font-weight: 700; }}
-    .reason-summary {{ color: var(--muted); font-size: 13px; line-height: 1.7; }}
-    .student-list {{ margin-top: 8px; max-height: 220px; overflow: auto; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: #fbfdfc; }}
-    .student-item {{ display: flex; justify-content: space-between; gap: 10px; font-size: 12px; line-height: 1.7; color: var(--text); border-bottom: 1px dashed rgba(19,48,56,.08); padding: 6px 0; }}
-    .student-item:last-child {{ border-bottom: none; }}
-    .empty {{ padding: 36px 16px; text-align: center; color: var(--muted); font-size: 14px; }}
-    .footer {{ padding: 0 24px 24px; }}
-    .footer-box {{ border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.8; }}
-    @media (max-width: 1120px) {{
-      .summary-grid, .filter-row, .teacher-grid {{ grid-template-columns: 1fr; }}
-      .hero-top, .teacher-top {{ flex-direction: column; }}
-      .pill-row {{ justify-content: flex-start; }}
-    }}
+    :root {
+      --bg:#f5f7f6;--panel:#fff;--hero:#1f6f63;--hero-soft:#2b8777;--text:#173038;--muted:#68767c;--line:rgba(19,48,56,.08);--accent:#1d745f;--warn:#c56d1f;--track:#e8eeeb;--shadow:0 18px 40px rgba(20,37,45,.06);
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;color:var(--text);background:var(--bg)} .wrap{max-width:1360px;margin:0 auto;padding:24px 20px 40px}
+    .hero{background:linear-gradient(135deg,var(--hero) 0%,var(--hero-soft) 100%);color:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow)} .hero-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+    h1{margin:0;font-size:32px;line-height:1.15} .hero-sub{margin-top:10px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.9);max-width:760px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}.pill{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.12);color:#fff;padding:10px 14px;border-radius:999px;font-size:13px;font-weight:700}
+    .section{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)} .section-head{padding:22px 24px 0}.section-head h2{margin:0;font-size:20px}.section-head p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.7}
+    .summary-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:20px 24px 24px}.stat-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.stat-label{font-size:12px;color:var(--muted)}.stat-value{margin-top:8px;font-size:26px;font-weight:700}.stat-note{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.6}
+    .table-wrap{padding:18px 24px 24px;overflow:auto} table{width:100%;border-collapse:collapse;min-width:920px} th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top} th{color:var(--muted);font-size:12px;font-weight:700;background:#f8fbfa} tbody tr:hover{background:#f6fbf8}
+    .analysis{padding:18px 24px 24px}.analysis p{margin:0 0 12px;font-size:14px;line-height:1.9;color:#33464d}
+    .teacher-panel{padding:20px 24px 24px}.filter-row{display:grid;grid-template-columns:1fr 1fr 1.1fr auto;gap:12px;align-items:end}.field label{display:block;margin-bottom:6px;font-size:13px;font-weight:700}.select-wrap{position:relative}.select-wrap::after{content:"BE";position:absolute;right:14px;top:50%;transform:translateY(-40%);color:var(--hero);pointer-events:none} select,button{font:inherit} select{width:100%;appearance:none;border:1px solid rgba(31,111,99,.14);border-radius:12px;padding:12px 38px 12px 14px;background:#fff;color:var(--text)} .reset-btn{height:44px;padding:0 16px;border:1px solid rgba(31,111,99,.12);border-radius:12px;background:#f5faf8;color:var(--hero);cursor:pointer;font-weight:700}
+    .teacher-card{margin-top:18px;border:1px solid var(--line);border-radius:18px;background:#fbfcfc;padding:18px}.teacher-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.teacher-name{font-size:24px;font-weight:700}.teacher-meta{margin-top:6px;font-size:13px;color:var(--muted);line-height:1.7}.teacher-tag{white-space:nowrap;background:#e9f5ef;color:var(--accent);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700}
+    .teacher-grid{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,1fr);gap:16px}.panel-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}.panel-card h3{margin:0 0 12px;font-size:16px}.metric-row{display:grid;grid-template-columns:170px 1fr 92px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.metric-row:last-child{border-bottom:none}.progress{height:10px;border-radius:999px;background:var(--track);overflow:hidden}.progress>span{display:block;height:100%;background:var(--accent)}.metric-value{text-align:right;font-size:14px;font-weight:700}
+    .reason-block+.reason-block{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.reason-title{margin:0 0 8px;font-size:15px;font-weight:700}.reason-summary{color:var(--muted);font-size:13px;line-height:1.7}.student-list{margin-top:8px;max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fbfdfc}.student-item{display:flex;justify-content:space-between;gap:10px;font-size:12px;line-height:1.7;color:var(--text);border-bottom:1px dashed rgba(19,48,56,.08);padding:6px 0}.student-item:last-child{border-bottom:none}.empty{padding:36px 16px;text-align:center;color:var(--muted);font-size:14px}
+    .footer{padding:0 24px 24px}.footer-box{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12px;line-height:1.8}
+    @media (max-width:1120px){.summary-grid,.filter-row,.teacher-grid{grid-template-columns:1fr}.hero-top,.teacher-top{flex-direction:column}.pill-row{justify-content:flex-start}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <section class="hero">
-      <div class="hero-top">
-        <div>
-          <h1>台湾教学区结课 SOP 看板</h1>
-          <div class="hero-sub" id="heroSub"></div>
-        </div>
-        <div class="pill-row">
-          <div class="pill" id="pillTeachers"></div>
-          <div class="pill" id="pillWeeks"></div>
-          <div class="pill" id="pillExceptions"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>月度汇总</h2>
-        <p>以结课日期落在所选月份、且结课归属老师属于台湾教学服务区为口径，判断老师是否在结课后 48 小时内发送结课寄语。</p>
-      </div>
-      <div class="summary-grid" id="summaryGrid"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>周度情况</h2>
-        <p>点击周次后，下方老师自查会同步切换到对应周度明细。</p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>周次</th>
-              <th>日期范围</th>
-              <th>应完成数</th>
-              <th>已完成数</th>
-              <th>未完成数</th>
-              <th>异常数</th>
-              <th>完成率</th>
-            </tr>
-          </thead>
-          <tbody id="weeklyTableBody"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head"><h2>看板说明</h2></div>
-      <div class="analysis" id="analysisText"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>老师自查</h2>
-        <p>先选月份、再选周次、最后选老师，即可查看该老师当周的结课 SOP 完成情况、未完成名单和异常名单。</p>
-      </div>
-      <div class="teacher-panel">
-        <div class="filter-row">
-          <div class="field">
-            <label>月份</label>
-            <div class="select-wrap"><select id="monthSelect"></select></div>
-          </div>
-          <div class="field">
-            <label>周次</label>
-            <div class="select-wrap"><select id="weekSelect"></select></div>
-          </div>
-          <div class="field">
-            <label>老师</label>
-            <div class="select-wrap"><select id="teacherSelect"></select></div>
-          </div>
-          <button class="reset-btn" id="resetBtn">重置筛选</button>
-        </div>
-        <div id="teacherCard"></div>
-      </div>
-    </section>
-
-    <div class="footer">
-      <div class="footer-box">口径说明：完成率 = 已完成数 / 应完成数。异常数当前指 LINE 对话中无法建立有效老师消息链路的样本，用于单独复核，不计入未完成名单。</div>
-    </div>
+    <section class="hero"><div class="hero-top"><div><h1>&#21488;&#28771;&#25945;&#23416;&#21312;&#32080;&#35506; SOP &#30475;&#26495;</h1><div class="hero-sub" id="heroSub"></div></div><div class="pill-row"><div class="pill" id="pillTeachers"></div><div class="pill" id="pillWeeks"></div><div class="pill" id="pillExceptions"></div></div></div></section>
+    <section class="section"><div class="section-head"><h2>&#26376;&#24230;&#21295;&#32317;</h2><p>&#20197;&#32080;&#35506;&#26085;&#26399;&#33853;&#22312;&#25152;&#36984;&#26376;&#20221;&#12289;&#19988;&#32080;&#35506;&#27512;&#23660;&#32769;&#24107;&#23660;&#26044;&#21488;&#28771;&#25945;&#23416;&#26381;&#21209;&#21312;&#28858;&#21475;&#24465;&#65292;&#21028;&#26039;&#32769;&#24107;&#26159;&#21542;&#22312;&#32080;&#35506;&#24460; 48 &#23567;&#26178;&#20839;&#30332;&#36865;&#32080;&#35506;&#23592;&#35486;&#12290;</p></div><div class="summary-grid" id="summaryGrid"></div></section>
+    <section class="section"><div class="section-head"><h2>&#21608;&#24230;&#24773;&#27841;</h2><p>&#40670;&#25802;&#21608;&#27425;&#24460;&#65292;&#19979;&#26041;&#32769;&#24107;&#33258;&#26597;&#26371;&#21516;&#27493;&#20999;&#25563;&#21040;&#23565;&#25033;&#21608;&#24230;&#26126;&#32048;&#12290;</p></div><div class="table-wrap"><table><thead><tr><th>&#21608;&#27425;</th><th>&#26085;&#26399;&#31684;&#22285;</th><th>&#25033;&#23436;&#25104;&#25976;</th><th>&#24050;&#23436;&#25104;&#25976;</th><th>&#26410;&#23436;&#25104;&#25976;</th><th>&#30064;&#24120;&#25976;</th><th>&#23436;&#25104;&#29575;</th></tr></thead><tbody id="weeklyTableBody"></tbody></table></div></section>
+    <section class="section"><div class="section-head"><h2>&#30475;&#26495;&#35498;&#26126;</h2></div><div class="analysis" id="analysisText"></div></section>
+    <section class="section"><div class="section-head"><h2>&#32769;&#24107;&#33258;&#26597;</h2><p>&#20808;&#36984;&#26376;&#20221;&#12289;&#20877;&#36984;&#21608;&#27425;&#12289;&#26368;&#24460;&#36984;&#32769;&#24107;&#65292;&#21363;&#21487;&#26597;&#30475;&#35442;&#32769;&#24107;&#30070;&#21608;&#30340;&#32080;&#35506; SOP &#23436;&#25104;&#24773;&#27841;&#12289;&#26410;&#23436;&#25104;&#21517;&#21934;&#21644;&#30064;&#24120;&#21517;&#21934;&#12290;</p></div><div class="teacher-panel"><div class="filter-row"><div class="field"><label>&#26376;&#20221;</label><div class="select-wrap"><select id="monthSelect"></select></div></div><div class="field"><label>&#21608;&#27425;</label><div class="select-wrap"><select id="weekSelect"></select></div></div><div class="field"><label>&#32769;&#24107;</label><div class="select-wrap"><select id="teacherSelect"></select></div></div><button class="reset-btn" id="resetBtn">&#37325;&#32622;&#31721;&#36984;</button></div><div id="teacherCard"></div></div></section>
+    <div class="footer"><div class="footer-box">&#21475;&#24465;&#35498;&#26126;&#65306;&#23436;&#25104;&#29575; = &#24050;&#23436;&#25104;&#25976; / &#25033;&#23436;&#25104;&#25976;&#12290;&#30064;&#24120;&#25976;&#30070;&#21069;&#25351; LINE &#23565;&#35441;&#20013;&#28961;&#27861;&#24314;&#31435;&#26377;&#25928;&#32769;&#24107;&#35338;&#24687;&#37504;&#36335;&#30340;&#27171;&#26412;&#65292;&#29992;&#26044;&#21934;&#29544;&#35079;&#26680;&#65292;&#19981;&#35336;&#20837;&#26410;&#23436;&#25104;&#21517;&#21934;&#12290;</div></div>
   </div>
   <script>
     const DATA = {"months": [{"month": "2026-05", "monthly_summary": {"due_count": 25, "done_count": 15, "undone_count": 10, "exception_count": 0, "done_rate": 0.6, "undone_reason_counts": {"LINE中無老師消息": 6, "存在疑似結課寄語，但超出課後48小時": 2, "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 2}, "exception_reason_counts": {}}, "weekly_summary": [{"month": "2026-05", "week_label": "5W1", "start_date": "2026-05-01", "end_date": "2026-05-03", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_reason_counts": {}, "exception_reason_counts": {}, "teachers": [{"teacher_id": "5607", "teacher_alias": "小壹老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}]}, {"month": "2026-05", "week_label": "5W2", "start_date": "2026-05-04", "end_date": "2026-05-10", "due_count": 5, "done_count": 3, "undone_count": 2, "exception_count": 0, "done_rate": 0.6, "undone_reason_counts": {"LINE中無老師消息": 1, "存在疑似結課寄語，但超出課後48小時": 1}, "exception_reason_counts": {}, "teachers": [{"teacher_id": "7391", "teacher_alias": "小加老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "25332094", "student_name": "Daniel", "closure_date": "2026-05-10 00:00:00", "reason": "LINE中無老師消息"}], "exception_students": [], "undone_reason_counts": {"LINE中無老師消息": 1}, "exception_reason_counts": {}}, {"teacher_id": "5607", "teacher_alias": "小壹老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "28238049", "student_name": "ܿܿ", "closure_date": "2026-05-04 00:00:00", "reason": "存在疑似結課寄語，但超出課後48小時"}], "exception_students": [], "undone_reason_counts": {"存在疑似結課寄語，但超出課後48小時": 1}, "exception_reason_counts": {}}, {"teacher_id": "73567", "teacher_alias": "卷卷兒老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "11032", "teacher_alias": "桔桔老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "7498", "teacher_alias": "青魚老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}]}, {"month": "2026-05", "week_label": "5W3", "start_date": "2026-05-11", "end_date": "2026-05-17", "due_count": 5, "done_count": 3, "undone_count": 2, "exception_count": 0, "done_rate": 0.6, "undone_reason_counts": {"LINE中無老師消息": 2}, "exception_reason_counts": {}, "teachers": [{"teacher_id": "9025", "teacher_alias": "樂羊羊老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "28436243", "student_name": "允辰", "closure_date": "2026-05-13 00:00:00", "reason": "LINE中無老師消息"}], "exception_students": [], "undone_reason_counts": {"LINE中無老師消息": 1}, "exception_reason_counts": {}}, {"teacher_id": "76135", "teacher_alias": "蘇心老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "27895062", "student_name": "Oli", "closure_date": "2026-05-17 00:00:00", "reason": "LINE中無老師消息"}], "exception_students": [], "undone_reason_counts": {"LINE中無老師消息": 1}, "exception_reason_counts": {}}, {"teacher_id": "5607", "teacher_alias": "小壹老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "73164", "teacher_alias": "曲奇餅乾老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "76029", "teacher_alias": "粉栗子老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}]}, {"month": "2026-05", "week_label": "5W4", "start_date": "2026-05-18", "end_date": "2026-05-24", "due_count": 7, "done_count": 4, "undone_count": 3, "exception_count": 0, "done_rate": 0.5714, "undone_reason_counts": {"LINE中無老師消息": 2, "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1}, "exception_reason_counts": {}, "teachers": [{"teacher_id": "69344", "teacher_alias": "lala老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "28467928", "student_name": "漢堡", "closure_date": "2026-05-22 00:00:00", "reason": "48小時內有老師消息，但未識別到姓名或結課關鍵詞"}], "exception_students": [], "undone_reason_counts": {"48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1}, "exception_reason_counts": {}}, {"teacher_id": "76328", "teacher_alias": "櫻桃老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "27624943", "student_name": "淇淇", "closure_date": "2026-05-20 00:00:00", "reason": "LINE中無老師消息"}], "exception_students": [], "undone_reason_counts": {"LINE中無老師消息": 1}, "exception_reason_counts": {}}, {"teacher_id": "76029", "teacher_alias": "粉栗子老師", "due_count": 3, "done_count": 2, "undone_count": 1, "exception_count": 0, "done_rate": 0.6667, "undone_students": [{"student_id": "28276018", "student_name": "鈞鈞  Dino", "closure_date": "2026-05-21 00:00:00", "reason": "LINE中無老師消息"}], "exception_students": [], "undone_reason_counts": {"LINE中無老師消息": 1}, "exception_reason_counts": {}}, {"teacher_id": "73567", "teacher_alias": "卷卷兒老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "73164", "teacher_alias": "曲奇餅乾老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}]}, {"month": "2026-05", "week_label": "5W5", "start_date": "2026-05-25", "end_date": "2026-05-31", "due_count": 7, "done_count": 4, "undone_count": 3, "exception_count": 0, "done_rate": 0.5714, "undone_reason_counts": {"LINE中無老師消息": 1, "存在疑似結課寄語，但超出課後48小時": 1, "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1}, "exception_reason_counts": {}, "teachers": [{"teacher_id": "10726", "teacher_alias": "星星雨老師", "due_count": 2, "done_count": 0, "undone_count": 2, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "28374136", "student_name": "依凝", "closure_date": "2026-05-28 00:00:00", "reason": "存在疑似結課寄語，但超出課後48小時"}, {"student_id": "28466527", "student_name": "ܷܷ", "closure_date": "2026-05-27 00:00:00", "reason": "48小時內有老師消息，但未識別到姓名或結課關鍵詞"}], "exception_students": [], "undone_reason_counts": {"存在疑似結課寄語，但超出課後48小時": 1, "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 1}, "exception_reason_counts": {}}, {"teacher_id": "7391", "teacher_alias": "小加老師", "due_count": 1, "done_count": 0, "undone_count": 1, "exception_count": 0, "done_rate": 0.0, "undone_students": [{"student_id": "26272490", "student_name": "林竟駿", "closure_date": "2026-05-31 00:00:00", "reason": "LINE中無老師消息"}], "exception_students": [], "undone_reason_counts": {"LINE中無老師消息": 1}, "exception_reason_counts": {}}, {"teacher_id": "72847", "teacher_alias": "青豌豆老師", "due_count": 2, "done_count": 2, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "73164", "teacher_alias": "曲奇餅乾老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "4735", "teacher_alias": "果凍老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}]}]}, {"month": "2026-06", "monthly_summary": {"due_count": 5, "done_count": 5, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_reason_counts": {}, "exception_reason_counts": {}}, "weekly_summary": [{"month": "2026-06", "week_label": "6W1", "start_date": "2026-06-01", "end_date": "2026-06-07", "due_count": 5, "done_count": 5, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_reason_counts": {}, "exception_reason_counts": {}, "teachers": [{"teacher_id": "73567", "teacher_alias": "卷卷兒老師", "due_count": 2, "done_count": 2, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "72847", "teacher_alias": "青豌豆老師", "due_count": 2, "done_count": 2, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}, {"teacher_id": "9025", "teacher_alias": "樂羊羊老師", "due_count": 1, "done_count": 1, "undone_count": 0, "exception_count": 0, "done_rate": 1.0, "undone_students": [], "exception_students": [], "undone_reason_counts": {}, "exception_reason_counts": {}}]}]}]};
     const months = DATA.months || [];
-    const state = {{
-      month: months[months.length - 1]?.month || "",
-      week: "",
-      teacherId: ""
-    }};
-    const monthSelect = document.getElementById("monthSelect");
-    const weekSelect = document.getElementById("weekSelect");
-    const teacherSelect = document.getElementById("teacherSelect");
-    const weeklyTableBody = document.getElementById("weeklyTableBody");
-    const summaryGrid = document.getElementById("summaryGrid");
-    const teacherCard = document.getElementById("teacherCard");
-    const heroSub = document.getElementById("heroSub");
-    const pillTeachers = document.getElementById("pillTeachers");
-    const pillWeeks = document.getElementById("pillWeeks");
-    const pillExceptions = document.getElementById("pillExceptions");
-    const analysisText = document.getElementById("analysisText");
-
-    function formatInt(v) {{ return new Intl.NumberFormat("zh-Hant").format(Number(v) || 0); }}
-    function formatPct(v) {{ return ((Number(v) || 0) * 100).toFixed(1) + "%"; }}
-    function esc(value) {{
-      return String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
-    }}
-    function currentMonth() {{
-      return months.find((item) => item.month === state.month) || months[0] || null;
-    }}
-    function currentWeek() {{
-      const month = currentMonth();
-      return month?.weekly_summary?.find((item) => item.week_label === state.week) || month?.weekly_summary?.[0] || null;
-    }}
-    function teacherName(teacher) {{
-      return teacher.teacher_alias || ("老师ID " + teacher.teacher_id);
-    }}
-    function updateHero() {{
-      const allWeeks = months.flatMap((month) => month.weekly_summary || []);
-      const totalTeachers = new Set(allWeeks.flatMap((week) => (week.teachers || []).map((teacher) => teacher.teacher_id))).size;
-      const totalExceptions = allWeeks.reduce((sum, week) => sum + Number(week.exception_count || 0), 0);
-      heroSub.textContent = "看板用于追踪台湾教学区老师的结课寄语完成情况，便于管理者按周复核，也便于老师自查未完成名单与异常样本。";
-      pillTeachers.textContent = "覆盖老师 " + formatInt(totalTeachers) + " 位";
-      pillWeeks.textContent = "覆盖周次 " + formatInt(allWeeks.length) + " 个";
-      pillExceptions.textContent = "异常样本 " + formatInt(totalExceptions) + " 条";
-    }}
-    function renderMonthOptions() {{
-      monthSelect.innerHTML = months.map((month) => `<option value="${{month.month}}">${{month.month}}</option>`).join("");
-      monthSelect.value = state.month;
-    }}
-    function renderWeekOptions() {{
-      const month = currentMonth();
-      const weeks = month?.weekly_summary || [];
-      if (!weeks.find((item) => item.week_label === state.week)) {{
-        state.week = weeks[0]?.week_label || "";
-      }}
-      weekSelect.innerHTML = weeks.map((week) => `<option value="${{week.week_label}}">${{week.week_label}}｜${{week.start_date}} ~ ${{week.end_date}}</option>`).join("");
-      weekSelect.value = state.week;
-    }}
-    function renderTeacherOptions() {{
-      const week = currentWeek();
-      const teachers = week?.teachers || [];
-      if (!teachers.find((teacher) => teacher.teacher_id === state.teacherId)) {{
-        state.teacherId = teachers[0]?.teacher_id || "";
-      }}
-      teacherSelect.innerHTML = teachers.map((teacher) => `<option value="${{teacher.teacher_id}}">${{esc(teacherName(teacher))}}</option>`).join("");
-      teacherSelect.value = state.teacherId;
-    }}
-    function renderSummary() {{
-      const month = currentMonth();
-      const s = month?.monthly_summary;
-      if (!s) return;
-      summaryGrid.innerHTML = [
-        ["应完成数", formatInt(s.due_count), "结课样本总数"],
-        ["已完成数", formatInt(s.done_count), "48小时内完成结课寄语"],
-        ["未完成数", formatInt(s.undone_count), "有老师消息但未命中结课寄语"],
-        ["异常数", formatInt(s.exception_count), "LINE 中无老师消息"],
-        ["完成率", formatPct(s.done_rate), "已完成数 / 应完成数"]
-      ].map(([label, value, note]) => `<div class="stat-card"><div class="stat-label">${{label}}</div><div class="stat-value">${{value}}</div><div class="stat-note">${{note}}</div></div>`).join("");
-    }}
-    function renderWeeklyTable() {{
-      const month = currentMonth();
-      const weeks = month?.weekly_summary || [];
-      weeklyTableBody.innerHTML = weeks.map((week) => `<tr data-week="${{week.week_label}}" style="${{week.week_label === state.week ? "background:#edf7f2;" : ""}}"><td>${{week.week_label}}</td><td>${{week.start_date}} ~ ${{week.end_date}}</td><td>${{formatInt(week.due_count)}}</td><td>${{formatInt(week.done_count)}}</td><td>${{formatInt(week.undone_count)}}</td><td>${{formatInt(week.exception_count)}}</td><td><strong>${{formatPct(week.done_rate)}}</strong></td></tr>`).join("");
-      weeklyTableBody.querySelectorAll("tr").forEach((row) => {{
-        row.addEventListener("click", () => {{
-          state.week = row.dataset.week;
-          renderWeekOptions();
-          renderTeacherOptions();
-          renderWeeklyTable();
-          renderTeacherCard();
-        }});
-      }});
-    }}
-    function summaryList(reasonMap) {{
-      const entries = Object.entries(reasonMap || {{}}).sort((a, b) => b[1] - a[1]);
-      if (!entries.length) return '<div class="reason-summary">本项暂无异常。</div>';
-      return '<div class="reason-summary">' + entries.map(([reason, count]) => `${{esc(reason)}} ${count}条`).join("；") + "</div>";
-    }}
-    function studentList(items) {{
-      if (!items || !items.length) return '<div class="reason-summary">本项暂无名单。</div>';
-      return '<div class="student-list">' + items.map((item) => `<div class="student-item"><div><strong>${{esc(item.student_name || "-")}}</strong><br>${{esc(item.reason || "")}}</div><div>${{esc(item.student_id || "")}}</div></div>`).join("") + "</div>";
-    }}
-    function renderAnalysis() {{
-      const month = currentMonth();
-      const s = month?.monthly_summary;
-      if (!s) return;
-      analysisText.innerHTML = [
-        `数据口径：本月共覆盖 ${(month.weekly_summary || []).length} 个周次，累计应完成 ${formatInt(s.due_count)} 人，完成率 ${formatPct(s.done_rate)}。`,
-        `异常剔除：异常样本定义为“LINE 中无老师消息”，本月共 ${formatInt(s.exception_count)} 条，单独列出供复核。`,
-        `重点关注：未完成样本共 ${formatInt(s.undone_count)} 条，主要原因会在老师明细中展示对应学员 ID、姓名和未命中原因。`
-      ].map((line) => `<p>${{line}}</p>`).join("");
-    }}
-    function renderTeacherCard() {{
-      const week = currentWeek();
-      const teacher = (week?.teachers || []).find((item) => item.teacher_id === state.teacherId);
-      if (!teacher) {{
-        teacherCard.innerHTML = '<div class="empty">当前筛选条件下暂无老师资料。</div>';
-        return;
-      }}
-      teacherCard.innerHTML = '<div class="teacher-card">' +
-        '<div class="teacher-top">' +
-          '<div><div class="teacher-name">' + esc(teacherName(teacher)) + '</div><div class="teacher-meta">老师 ID ' + esc(teacher.teacher_id) + '｜周次 ' + esc(week.week_label) + '｜' + esc(week.start_date) + ' ~ ' + esc(week.end_date) + '</div></div>' +
-          '<div class="teacher-tag">完成率 ' + formatPct(teacher.done_rate) + '</div>' +
-        '</div>' +
-        '<div class="teacher-grid">' +
-          '<div class="panel-card">' +
-            '<h3>完成情况</h3>' +
-            '<div class="metric-row"><div>结课寄语</div><div class="progress"><span style="width:' + ((Number(teacher.done_rate) || 0) * 100).toFixed(1) + '%"></span></div><div class="metric-value">' + formatInt(teacher.done_count) + ' / ' + formatInt(teacher.due_count) + '</div></div>' +
-            '<div class="metric-row"><div>未完成</div><div class="progress"><span style="width:' + ((teacher.due_count ? teacher.undone_count / teacher.due_count : 0) * 100).toFixed(1) + '%;background:#c56d1f"></span></div><div class="metric-value">' + formatInt(teacher.undone_count) + '</div></div>' +
-            '<div class="metric-row"><div>异常</div><div class="progress"><span style="width:' + ((teacher.due_count ? teacher.exception_count / teacher.due_count : 0) * 100).toFixed(1) + '%;background:#8a98a0"></span></div><div class="metric-value">' + formatInt(teacher.exception_count) + '</div></div>' +
-          '</div>' +
-          '<div class="panel-card">' +
-            '<h3>原因与名单</h3>' +
-            '<div class="reason-block"><div class="reason-title">未完成原因</div>' + summaryList(teacher.undone_reason_counts) + studentList(teacher.undone_students) + '</div>' +
-            '<div class="reason-block"><div class="reason-title">异常原因</div>' + summaryList(teacher.exception_reason_counts) + studentList(teacher.exception_students) + '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    }}
-    monthSelect.addEventListener("change", () => {{
-      state.month = monthSelect.value;
-      renderWeekOptions();
-      renderTeacherOptions();
-      renderSummary();
-      renderWeeklyTable();
-      renderAnalysis();
-      renderTeacherCard();
-    }});
-    weekSelect.addEventListener("change", () => {{
-      state.week = weekSelect.value;
-      renderTeacherOptions();
-      renderWeeklyTable();
-      renderTeacherCard();
-    }});
-    teacherSelect.addEventListener("change", () => {{
-      state.teacherId = teacherSelect.value;
-      renderTeacherCard();
-    }});
-    document.getElementById("resetBtn").addEventListener("click", () => {{
-      state.month = months[months.length - 1]?.month || "";
-      state.week = "";
-      state.teacherId = "";
-      renderMonthOptions();
-      renderWeekOptions();
-      renderTeacherOptions();
-      renderSummary();
-      renderWeeklyTable();
-      renderAnalysis();
-      renderTeacherCard();
-    }});
-    updateHero();
-    renderMonthOptions();
-    renderWeekOptions();
-    renderTeacherOptions();
-    renderSummary();
-    renderWeeklyTable();
-    renderAnalysis();
-    renderTeacherCard();
+    const state = { month: months[months.length - 1]?.month || '', week: '', teacherId: '' };
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+    const teacherSelect = document.getElementById('teacherSelect');
+    const weeklyTableBody = document.getElementById('weeklyTableBody');
+    const summaryGrid = document.getElementById('summaryGrid');
+    const teacherCard = document.getElementById('teacherCard');
+    const heroSub = document.getElementById('heroSub');
+    const pillTeachers = document.getElementById('pillTeachers');
+    const pillWeeks = document.getElementById('pillWeeks');
+    const pillExceptions = document.getElementById('pillExceptions');
+    const analysisText = document.getElementById('analysisText');
+    function formatInt(v){return new Intl.NumberFormat('zh-Hant').format(Number(v)||0)}
+    function formatPct(v){return ((Number(v)||0)*100).toFixed(1)+'%'}
+    function esc(v){return String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+    function currentMonth(){return months.find(m=>m.month===state.month)||months[0]||null}
+    function currentWeek(){const m=currentMonth();return m?.weekly_summary?.find(w=>w.week_label===state.week)||m?.weekly_summary?.[0]||null}
+    function teacherName(t){return t.teacher_alias||('??ID '+t.teacher_id)}
+    function updateHero(){const allWeeks=months.flatMap(m=>m.weekly_summary||[]);const totalTeachers=new Set(allWeeks.flatMap(w=>(w.teachers||[]).map(t=>t.teacher_id))).size;const totalExceptions=allWeeks.reduce((s,w)=>s+Number(w.exception_count||0),0);heroSub.textContent='???????????????????????????????????????????????????';pillTeachers.textContent='???? '+formatInt(totalTeachers)+' ?';pillWeeks.textContent='???? '+formatInt(allWeeks.length)+' ?';pillExceptions.textContent='???? '+formatInt(totalExceptions)+' ?'}
+    function renderMonthOptions(){monthSelect.innerHTML=months.map(m=>`<option value="${m.month}">${m.month}</option>`).join('');monthSelect.value=state.month}
+    function renderWeekOptions(){const weeks=currentMonth()?.weekly_summary||[];if(!weeks.find(w=>w.week_label===state.week))state.week=weeks[0]?.week_label||'';weekSelect.innerHTML=weeks.map(w=>`<option value="${w.week_label}">${w.week_label}?${w.start_date} ~ ${w.end_date}</option>`).join('');weekSelect.value=state.week}
+    function renderTeacherOptions(){const teachers=currentWeek()?.teachers||[];if(!teachers.find(t=>t.teacher_id===state.teacherId))state.teacherId=teachers[0]?.teacher_id||'';teacherSelect.innerHTML=teachers.map(t=>`<option value="${t.teacher_id}">${esc(teacherName(t))}</option>`).join('');teacherSelect.value=state.teacherId}
+    function renderSummary(){const s=currentMonth()?.monthly_summary;if(!s)return;summaryGrid.innerHTML=[[ '????',formatInt(s.due_count),'??????'],['????',formatInt(s.done_count),'48?????????'],['????',formatInt(s.undone_count),'?????????????'],['???',formatInt(s.exception_count),'LINE ??????'],['???',formatPct(s.done_rate),'???? / ????']].map(([l,v,n])=>`<div class="stat-card"><div class="stat-label">${l}</div><div class="stat-value">${v}</div><div class="stat-note">${n}</div></div>`).join('')}
+    function renderWeeklyTable(){const weeks=currentMonth()?.weekly_summary||[];weeklyTableBody.innerHTML=weeks.map(w=>`<tr data-week="${w.week_label}" style="${w.week_label===state.week?'background:#edf7f2;':''}"><td>${w.week_label}</td><td>${w.start_date} ~ ${w.end_date}</td><td>${formatInt(w.due_count)}</td><td>${formatInt(w.done_count)}</td><td>${formatInt(w.undone_count)}</td><td>${formatInt(w.exception_count)}</td><td><strong>${formatPct(w.done_rate)}</strong></td></tr>`).join('');weeklyTableBody.querySelectorAll('tr').forEach(r=>r.addEventListener('click',()=>{{state.week=r.dataset.week;renderWeekOptions();renderTeacherOptions();renderWeeklyTable();renderTeacherCard();}}))}
+    function summaryList(obj){const entries=Object.entries(obj||{}).sort((a,b)=>b[1]-a[1]);if(!entries.length)return '<div class="reason-summary">???????</div>';return '<div class="reason-summary">'+entries.map(([r,c])=>`${esc(r)} ${c}?`).join('?')+'</div>'}
+    function studentList(items){if(!items||!items.length)return '<div class="reason-summary">???????</div>';return '<div class="student-list">'+items.map(i=>`<div class="student-item"><div><strong>${esc(i.student_name||'-')}</strong><br>${esc(i.reason||'')}</div><div>${esc(i.student_id||'')}</div></div>`).join('')+'</div>'}
+    function renderAnalysis(){const m=currentMonth();const s=m?.monthly_summary;if(!s)return;analysisText.innerHTML=[`?????????? ${(m.weekly_summary||[]).length} ????????? ${formatInt(s.due_count)} ????? ${formatPct(s.done_rate)}?`,`?????????????LINE ??????????? ${formatInt(s.exception_count)} ??????????`,`??????????? ${formatInt(s.undone_count)} ??????????????????? ID??????????`].map(t=>`<p>${t}</p>`).join('')}
+    function renderTeacherCard(){const week=currentWeek();const teacher=(week?.teachers||[]).find(t=>t.teacher_id===state.teacherId);if(!teacher){teacherCard.innerHTML='<div class="empty">??????????????</div>';return;}teacherCard.innerHTML='<div class="teacher-card">'+'<div class="teacher-top">'+'<div><div class="teacher-name">'+esc(teacherName(teacher))+'</div><div class="teacher-meta">?? ID '+esc(teacher.teacher_id)+'??? '+esc(week.week_label)+'?'+esc(week.start_date)+' ~ '+esc(week.end_date)+'</div></div>'+'<div class="teacher-tag">??? '+formatPct(teacher.done_rate)+'</div>'+'</div>'+'<div class="teacher-grid">'+'<div class="panel-card">'+'<h3>????</h3>'+'<div class="metric-row"><div>????</div><div class="progress"><span style="width:'+((Number(teacher.done_rate)||0)*100).toFixed(1)+'%"></span></div><div class="metric-value">'+formatInt(teacher.done_count)+' / '+formatInt(teacher.due_count)+'</div></div>'+'<div class="metric-row"><div>???</div><div class="progress"><span style="width:'+((teacher.due_count?teacher.undone_count/teacher.due_count:0)*100).toFixed(1)+'%;background:#c56d1f"></span></div><div class="metric-value">'+formatInt(teacher.undone_count)+'</div></div>'+'<div class="metric-row"><div>??</div><div class="progress"><span style="width:'+((teacher.due_count?teacher.exception_count/teacher.due_count:0)*100).toFixed(1)+'%;background:#8a98a0"></span></div><div class="metric-value">'+formatInt(teacher.exception_count)+'</div></div>'+'</div>'+'<div class="panel-card">'+'<h3>?????</h3>'+'<div class="reason-block"><div class="reason-title">?????</div>'+summaryList(teacher.undone_reason_counts)+studentList(teacher.undone_students)+'</div>'+'<div class="reason-block"><div class="reason-title">????</div>'+summaryList(teacher.exception_reason_counts)+studentList(teacher.exception_students)+'</div>'+'</div>'+'</div>'+'</div>'}
+    monthSelect.addEventListener('change',()=>{state.month=monthSelect.value;renderWeekOptions();renderTeacherOptions();renderSummary();renderWeeklyTable();renderAnalysis();renderTeacherCard()});
+    weekSelect.addEventListener('change',()=>{state.week=weekSelect.value;renderTeacherOptions();renderWeeklyTable();renderTeacherCard()});
+    teacherSelect.addEventListener('change',()=>{state.teacherId=teacherSelect.value;renderTeacherCard()});
+    document.getElementById('resetBtn').addEventListener('click',()=>{state.month=months[months.length-1]?.month||'';state.week='';state.teacherId='';renderMonthOptions();renderWeekOptions();renderTeacherOptions();renderSummary();renderWeeklyTable();renderAnalysis();renderTeacherCard()});
+    updateHero();renderMonthOptions();renderWeekOptions();renderTeacherOptions();renderSummary();renderWeeklyTable();renderAnalysis();renderTeacherCard();
   </script>
 </body>
 </html>
