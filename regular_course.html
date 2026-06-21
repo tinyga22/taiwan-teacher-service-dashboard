@@ -11493,6 +11493,7 @@
       const text = safeText(reason);
       return text || "未識別到可歸因文案，建議回看原始對話時間窗";
     };
+    const derivedLeaveCount = teacher => Math.max(0, Number(teacher.pre_denom || 0) - Number(teacher.signed_students || 0));
     const normalizeAttendance = value => {
       const text = String(value || "").replace(/\s+/g, "");
       if (text.includes("签到") || text.includes("簽到") || text.includes("已签到") || text.includes("已簽到") || text.includes("��ǩ��")) return "signed";
@@ -11651,7 +11652,7 @@
           <td class="rate">${pct(teacher.image_rate)} <span class="muted">(${num(teacher.image_done)}/${num(teacher.image_denom)})</span></td>
           <td class="rate">${pct(teacher.file_rate)} <span class="muted">(${num(teacher.file_done)}/${num(teacher.file_denom)})</span></td>
           <td class="rate">${pct(teacher.text_rate)} <span class="muted">(${num(teacher.text_done)}/${num(teacher.text_denom)})</span></td>
-          <td>${num(teacher.signed_students)} / ${num(teacher.leave_students)}</td>
+          <td>${num(teacher.signed_students)} / ${num(derivedLeaveCount(teacher))}</td>
         </tr>
       `).join("");
       teacherWeekTableBody.querySelectorAll("tr").forEach(row => {
@@ -11726,7 +11727,7 @@
         <div class="teacher-top">
           <div>
             <div class="teacher-name">${teacher.teacher_alias}</div>
-            <div class="teacher-meta">老師 ID：${teacher.teacher_id}｜簽到學員 ${num(teacher.signed_students)} 人｜請假學員 ${num(teacher.leave_students)} 人｜質檢周次 ${weekLabel(currentPeriod().key)}</div>
+            <div class="teacher-meta">老師 ID：${teacher.teacher_id}｜簽到學員 ${num(teacher.signed_students)} 人｜請假學員 ${num(derivedLeaveCount(teacher))} 人｜質檢周次 ${weekLabel(currentPeriod().key)}</div>
           </div>
           <div class="teacher-tag">自查視圖</div>
         </div>
