@@ -1,7 +1,7 @@
 {
   "overall": {
     "teacher_count": 19,
-    "period_count": 11,
+    "period_count": 12,
     "exception_count": 3318
   },
   "periods": [
@@ -8805,7 +8805,7 @@
       "summary": {
         "teacher_count": 19,
         "signed_students": 1806,
-        "leave_students": 0,
+        "leave_students": 217,
         "avg_preclass_rate": 0.2865,
         "avg_image_rate": 0.6299,
         "avg_file_rate": 0.5824,
@@ -8818,7 +8818,7 @@
           "teacher_id": "69344",
           "teacher_alias": "lala老師",
           "signed_students": 86,
-          "leave_students": 0,
+          "leave_students": 18,
           "pre_done": 77,
           "pre_denom": 104,
           "pre_rate": 0.7404,
@@ -8877,7 +8877,7 @@
           "teacher_id": "73567",
           "teacher_alias": "卷卷兒老師",
           "signed_students": 184,
-          "leave_students": 0,
+          "leave_students": 17,
           "pre_done": 18,
           "pre_denom": 201,
           "pre_rate": 0.0896,
@@ -8944,7 +8944,7 @@
           "teacher_id": "7391",
           "teacher_alias": "小加老師",
           "signed_students": 21,
-          "leave_students": 0,
+          "leave_students": 3,
           "pre_done": 18,
           "pre_denom": 24,
           "pre_rate": 0.75,
@@ -8999,7 +8999,7 @@
           "teacher_id": "5607",
           "teacher_alias": "小壹老師",
           "signed_students": 142,
-          "leave_students": 0,
+          "leave_students": 12,
           "pre_done": 111,
           "pre_denom": 154,
           "pre_rate": 0.7208,
@@ -9054,7 +9054,7 @@
           "teacher_id": "76395",
           "teacher_alias": "星星燈老師",
           "signed_students": 39,
-          "leave_students": 0,
+          "leave_students": 5,
           "pre_done": 12,
           "pre_denom": 44,
           "pre_rate": 0.2727,
@@ -9125,7 +9125,7 @@
           "teacher_id": "10726",
           "teacher_alias": "星星雨老師",
           "signed_students": 121,
-          "leave_students": 0,
+          "leave_students": 8,
           "pre_done": 10,
           "pre_denom": 129,
           "pre_rate": 0.0775,
@@ -9192,7 +9192,7 @@
           "teacher_id": "73164",
           "teacher_alias": "曲奇餅乾老師",
           "signed_students": 121,
-          "leave_students": 0,
+          "leave_students": 9,
           "pre_done": 8,
           "pre_denom": 130,
           "pre_rate": 0.0615,
@@ -9255,7 +9255,7 @@
           "teacher_id": "4735",
           "teacher_alias": "果凍老師",
           "signed_students": 137,
-          "leave_students": 0,
+          "leave_students": 16,
           "pre_done": 3,
           "pre_denom": 153,
           "pre_rate": 0.0196,
@@ -9322,7 +9322,7 @@
           "teacher_id": "11032",
           "teacher_alias": "桔桔老師",
           "signed_students": 64,
-          "leave_students": 0,
+          "leave_students": 10,
           "pre_done": 10,
           "pre_denom": 74,
           "pre_rate": 0.1351,
@@ -9389,7 +9389,7 @@
           "teacher_id": "9025",
           "teacher_alias": "樂羊羊老師",
           "signed_students": 106,
-          "leave_students": 0,
+          "leave_students": 21,
           "pre_done": 22,
           "pre_denom": 127,
           "pre_rate": 0.1732,
@@ -9448,7 +9448,7 @@
           "teacher_id": "76328",
           "teacher_alias": "櫻桃老師",
           "signed_students": 91,
-          "leave_students": 0,
+          "leave_students": 8,
           "pre_done": 85,
           "pre_denom": 99,
           "pre_rate": 0.8586,
@@ -9515,7 +9515,7 @@
           "teacher_id": "76029",
           "teacher_alias": "粉栗子老師",
           "signed_students": 100,
-          "leave_students": 0,
+          "leave_students": 7,
           "pre_done": 32,
           "pre_denom": 107,
           "pre_rate": 0.2991,
@@ -9578,7 +9578,7 @@
           "teacher_id": "75993",
           "teacher_alias": "粉紅魚老師",
           "signed_students": 87,
-          "leave_students": 0,
+          "leave_students": 14,
           "pre_done": 16,
           "pre_denom": 101,
           "pre_rate": 0.1584,
@@ -9645,7 +9645,7 @@
           "teacher_id": "76902",
           "teacher_alias": "糰子老師",
           "signed_students": 23,
-          "leave_students": 0,
+          "leave_students": 4,
           "pre_done": 2,
           "pre_denom": 27,
           "pre_rate": 0.0741,
@@ -9708,7 +9708,7 @@
           "teacher_id": "76135",
           "teacher_alias": "蘇心老師",
           "signed_students": 103,
-          "leave_students": 0,
+          "leave_students": 9,
           "pre_done": 29,
           "pre_denom": 112,
           "pre_rate": 0.2589,
@@ -9779,7 +9779,7 @@
           "teacher_id": "4935",
           "teacher_alias": "蘑菇老師",
           "signed_students": 34,
-          "leave_students": 0,
+          "leave_students": 6,
           "pre_done": 16,
           "pre_denom": 40,
           "pre_rate": 0.4,
@@ -9834,7 +9834,7 @@
           "teacher_id": "7560",
           "teacher_alias": "阿魚老師",
           "signed_students": 100,
-          "leave_students": 0,
+          "leave_students": 4,
           "pre_done": 11,
           "pre_denom": 104,
           "pre_rate": 0.1058,
@@ -9901,7 +9901,7 @@
           "teacher_id": "72847",
           "teacher_alias": "青豌豆老師",
           "signed_students": 127,
-          "leave_students": 0,
+          "leave_students": 28,
           "pre_done": 6,
           "pre_denom": 155,
           "pre_rate": 0.0387,
@@ -9968,7 +9968,7 @@
           "teacher_id": "7498",
           "teacher_alias": "青魚老師",
           "signed_students": 120,
-          "leave_students": 0,
+          "leave_students": 18,
           "pre_done": 29,
           "pre_denom": 138,
           "pre_rate": 0.2101,
@@ -10038,7 +10038,7 @@
       "summary": {
         "teacher_count": 19,
         "signed_students": 1669,
-        "leave_students": 0,
+        "leave_students": 170,
         "avg_preclass_rate": 0.2853,
         "avg_image_rate": 0.4689,
         "avg_file_rate": 0.4143,
@@ -10051,7 +10051,7 @@
           "teacher_id": "69344",
           "teacher_alias": "lala老師",
           "signed_students": 76,
-          "leave_students": 0,
+          "leave_students": 13,
           "pre_done": 47,
           "pre_denom": 89,
           "pre_rate": 0.5281,
@@ -10114,7 +10114,7 @@
           "teacher_id": "73567",
           "teacher_alias": "卷卷兒老師",
           "signed_students": 154,
-          "leave_students": 0,
+          "leave_students": 17,
           "pre_done": 1,
           "pre_denom": 171,
           "pre_rate": 0.0058,
@@ -10236,7 +10236,7 @@
           "teacher_id": "5607",
           "teacher_alias": "小壹老師",
           "signed_students": 160,
-          "leave_students": 0,
+          "leave_students": 13,
           "pre_done": 77,
           "pre_denom": 173,
           "pre_rate": 0.4451,
@@ -10299,7 +10299,7 @@
           "teacher_id": "76395",
           "teacher_alias": "星星燈老師",
           "signed_students": 46,
-          "leave_students": 0,
+          "leave_students": 1,
           "pre_done": 33,
           "pre_denom": 47,
           "pre_rate": 0.7021,
@@ -10366,7 +10366,7 @@
           "teacher_id": "10726",
           "teacher_alias": "星星雨老師",
           "signed_students": 127,
-          "leave_students": 0,
+          "leave_students": 8,
           "pre_done": 4,
           "pre_denom": 135,
           "pre_rate": 0.0296,
@@ -10429,7 +10429,7 @@
           "teacher_id": "73164",
           "teacher_alias": "曲奇餅乾老師",
           "signed_students": 106,
-          "leave_students": 0,
+          "leave_students": 12,
           "pre_done": 21,
           "pre_denom": 118,
           "pre_rate": 0.178,
@@ -10488,7 +10488,7 @@
           "teacher_id": "4735",
           "teacher_alias": "果凍老師",
           "signed_students": 139,
-          "leave_students": 0,
+          "leave_students": 14,
           "pre_done": 25,
           "pre_denom": 153,
           "pre_rate": 0.1634,
@@ -10559,7 +10559,7 @@
           "teacher_id": "11032",
           "teacher_alias": "桔桔老師",
           "signed_students": 52,
-          "leave_students": 0,
+          "leave_students": 10,
           "pre_done": 21,
           "pre_denom": 62,
           "pre_rate": 0.3387,
@@ -10626,7 +10626,7 @@
           "teacher_id": "9025",
           "teacher_alias": "樂羊羊老師",
           "signed_students": 98,
-          "leave_students": 0,
+          "leave_students": 8,
           "pre_done": 14,
           "pre_denom": 106,
           "pre_rate": 0.1321,
@@ -10685,7 +10685,7 @@
           "teacher_id": "76328",
           "teacher_alias": "櫻桃老師",
           "signed_students": 81,
-          "leave_students": 0,
+          "leave_students": 2,
           "pre_done": 38,
           "pre_denom": 83,
           "pre_rate": 0.4578,
@@ -10748,7 +10748,7 @@
           "teacher_id": "76029",
           "teacher_alias": "粉栗子老師",
           "signed_students": 83,
-          "leave_students": 0,
+          "leave_students": 9,
           "pre_done": 12,
           "pre_denom": 92,
           "pre_rate": 0.1304,
@@ -10811,7 +10811,7 @@
           "teacher_id": "75993",
           "teacher_alias": "粉紅魚老師",
           "signed_students": 71,
-          "leave_students": 0,
+          "leave_students": 15,
           "pre_done": 13,
           "pre_denom": 86,
           "pre_rate": 0.1512,
@@ -10878,7 +10878,7 @@
           "teacher_id": "76902",
           "teacher_alias": "糰子老師",
           "signed_students": 25,
-          "leave_students": 0,
+          "leave_students": 4,
           "pre_done": 9,
           "pre_denom": 29,
           "pre_rate": 0.3103,
@@ -10941,7 +10941,7 @@
           "teacher_id": "76135",
           "teacher_alias": "蘇心老師",
           "signed_students": 87,
-          "leave_students": 0,
+          "leave_students": 7,
           "pre_done": 36,
           "pre_denom": 94,
           "pre_rate": 0.383,
@@ -11012,7 +11012,7 @@
           "teacher_id": "4935",
           "teacher_alias": "蘑菇老師",
           "signed_students": 34,
-          "leave_students": 0,
+          "leave_students": 7,
           "pre_done": 20,
           "pre_denom": 41,
           "pre_rate": 0.4878,
@@ -11067,7 +11067,7 @@
           "teacher_id": "7560",
           "teacher_alias": "阿魚老師",
           "signed_students": 86,
-          "leave_students": 0,
+          "leave_students": 4,
           "pre_done": 3,
           "pre_denom": 90,
           "pre_rate": 0.0333,
@@ -11134,7 +11134,7 @@
           "teacher_id": "72847",
           "teacher_alias": "青豌豆老師",
           "signed_students": 110,
-          "leave_students": 0,
+          "leave_students": 13,
           "pre_done": 5,
           "pre_denom": 123,
           "pre_rate": 0.0407,
@@ -11197,7 +11197,7 @@
           "teacher_id": "7498",
           "teacher_alias": "青魚老師",
           "signed_students": 118,
-          "leave_students": 0,
+          "leave_students": 13,
           "pre_done": 20,
           "pre_denom": 131,
           "pre_rate": 0.1527,
@@ -11260,6 +11260,1198 @@
             [
               "存在帶學員姓名文本，但超出課後24小時",
               7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2026-06_W4",
+      "label": "2026-06-22 ~ 2026-06-25",
+      "summary": {
+        "teacher_count": 19,
+        "signed_students": 1086,
+        "leave_students": 133,
+        "avg_preclass_rate": 0.3179,
+        "avg_image_rate": 0.6535,
+        "avg_file_rate": 0.5542,
+        "avg_text_rate": 0.4176,
+        "exception_count": 0
+      },
+      "teachers": [
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "69344",
+          "teacher_alias": "lala老師",
+          "signed_students": 70,
+          "leave_students": 9,
+          "pre_done": 57,
+          "pre_denom": 79,
+          "pre_rate": 0.7215,
+          "image_done": 62,
+          "image_denom": 70,
+          "image_rate": 0.8857,
+          "file_done": 62,
+          "file_denom": 70,
+          "file_rate": 0.8857,
+          "text_done": 37,
+          "text_denom": 70,
+          "text_rate": 0.5286,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              21
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              1
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              7
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              7
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              14
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              12
+            ],
+            [
+              "課後24小時內無老師消息",
+              7
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "73567",
+          "teacher_alias": "卷卷兒老師",
+          "signed_students": 71,
+          "leave_students": 3,
+          "pre_done": 1,
+          "pre_denom": 74,
+          "pre_rate": 0.0135,
+          "image_done": 3,
+          "image_denom": 71,
+          "image_rate": 0.0423,
+          "file_done": 1,
+          "file_denom": 71,
+          "file_rate": 0.0141,
+          "text_done": 8,
+          "text_denom": 71,
+          "text_rate": 0.1127,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              60
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              13
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              53
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              15
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              53
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              14
+            ],
+            [
+              "課後24小時內無文件消息",
+              3
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內無老師消息",
+              53
+            ],
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              7
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              3
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "7391",
+          "teacher_alias": "小加老師",
+          "signed_students": 11,
+          "leave_students": 1,
+          "pre_done": 9,
+          "pre_denom": 12,
+          "pre_rate": 0.75,
+          "image_done": 8,
+          "image_denom": 11,
+          "image_rate": 0.7273,
+          "file_done": 8,
+          "file_denom": 11,
+          "file_rate": 0.7273,
+          "text_done": 3,
+          "text_denom": 11,
+          "text_rate": 0.2727,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              3
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              3
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              3
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              3
+            ],
+            [
+              "課後24小時內無老師消息",
+              3
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              2
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "5607",
+          "teacher_alias": "小壹老師",
+          "signed_students": 83,
+          "leave_students": 10,
+          "pre_done": 58,
+          "pre_denom": 93,
+          "pre_rate": 0.6237,
+          "image_done": 78,
+          "image_denom": 83,
+          "image_rate": 0.9398,
+          "file_done": 45,
+          "file_denom": 83,
+          "file_rate": 0.5422,
+          "text_done": 57,
+          "text_denom": 83,
+          "text_rate": 0.6867,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              23
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              12
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              5
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              31
+            ],
+            [
+              "課後24小時內無老師消息",
+              5
+            ],
+            [
+              "課後24小時內無文件消息",
+              2
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              11
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              10
+            ],
+            [
+              "課後24小時內無老師消息",
+              5
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "76395",
+          "teacher_alias": "星星燈老師",
+          "signed_students": 20,
+          "leave_students": 6,
+          "pre_done": 22,
+          "pre_denom": 26,
+          "pre_rate": 0.8462,
+          "image_done": 15,
+          "image_denom": 20,
+          "image_rate": 0.75,
+          "file_done": 0,
+          "file_denom": 20,
+          "file_rate": 0.0,
+          "text_done": 9,
+          "text_denom": 20,
+          "text_rate": 0.45,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              3
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              1
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              4
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              12
+            ],
+            [
+              "課後24小時內無老師消息",
+              4
+            ],
+            [
+              "課後24小時內無文件消息",
+              4
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              7
+            ],
+            [
+              "課後24小時內無老師消息",
+              4
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "10726",
+          "teacher_alias": "星星雨老師",
+          "signed_students": 100,
+          "leave_students": 12,
+          "pre_done": 5,
+          "pre_denom": 112,
+          "pre_rate": 0.0446,
+          "image_done": 8,
+          "image_denom": 100,
+          "image_rate": 0.08,
+          "file_done": 51,
+          "file_denom": 100,
+          "file_rate": 0.51,
+          "text_done": 8,
+          "text_denom": 100,
+          "text_rate": 0.08,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              98
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              9
+            ]
+          ],
+          "image_reasons": [
+            [
+              "存在圖片消息，但超出課後24小時",
+              51
+            ],
+            [
+              "課後24小時內無老師消息",
+              41
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              41
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              8
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內無老師消息",
+              41
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              29
+            ],
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              18
+            ],
+            [
+              "課後24小時內僅有圖片或文件，無文字",
+              4
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "73164",
+          "teacher_alias": "曲奇餅乾老師",
+          "signed_students": 80,
+          "leave_students": 6,
+          "pre_done": 2,
+          "pre_denom": 86,
+          "pre_rate": 0.0233,
+          "image_done": 12,
+          "image_denom": 80,
+          "image_rate": 0.15,
+          "file_done": 55,
+          "file_denom": 80,
+          "file_rate": 0.6875,
+          "text_done": 46,
+          "text_denom": 80,
+          "text_rate": 0.575,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              77
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              7
+            ]
+          ],
+          "image_reasons": [
+            [
+              "存在圖片消息，但超出課後24小時",
+              56
+            ],
+            [
+              "課後24小時內無老師消息",
+              12
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              13
+            ],
+            [
+              "課後24小時內無老師消息",
+              12
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              19
+            ],
+            [
+              "課後24小時內無老師消息",
+              12
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              3
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "4735",
+          "teacher_alias": "果凍老師",
+          "signed_students": 74,
+          "leave_students": 7,
+          "pre_done": 2,
+          "pre_denom": 81,
+          "pre_rate": 0.0247,
+          "image_done": 69,
+          "image_denom": 74,
+          "image_rate": 0.9324,
+          "file_done": 54,
+          "file_denom": 74,
+          "file_rate": 0.7297,
+          "text_done": 47,
+          "text_denom": 74,
+          "text_rate": 0.6351,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              43
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              36
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              5
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              15
+            ],
+            [
+              "課後24小時內無老師消息",
+              5
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              12
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              8
+            ],
+            [
+              "課後24小時內無老師消息",
+              5
+            ],
+            [
+              "課後24小時內僅有圖片或文件，無文字",
+              2
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "11032",
+          "teacher_alias": "桔桔老師",
+          "signed_students": 47,
+          "leave_students": 4,
+          "pre_done": 36,
+          "pre_denom": 51,
+          "pre_rate": 0.7059,
+          "image_done": 39,
+          "image_denom": 47,
+          "image_rate": 0.8298,
+          "file_done": 43,
+          "file_denom": 47,
+          "file_rate": 0.9149,
+          "text_done": 15,
+          "text_denom": 47,
+          "text_rate": 0.3191,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              12
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              3
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              4
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              4
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              4
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              14
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              13
+            ],
+            [
+              "課後24小時內無老師消息",
+              4
+            ],
+            [
+              "課後24小時內僅有圖片或文件，無文字",
+              1
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "9025",
+          "teacher_alias": "樂羊羊老師",
+          "signed_students": 77,
+          "leave_students": 11,
+          "pre_done": 18,
+          "pre_denom": 88,
+          "pre_rate": 0.2045,
+          "image_done": 73,
+          "image_denom": 77,
+          "image_rate": 0.9481,
+          "file_done": 73,
+          "file_denom": 77,
+          "file_rate": 0.9481,
+          "text_done": 34,
+          "text_denom": 77,
+          "text_rate": 0.4416,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              37
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              33
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              3
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              3
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              24
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              16
+            ],
+            [
+              "課後24小時內無老師消息",
+              3
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "76328",
+          "teacher_alias": "櫻桃老師",
+          "signed_students": 49,
+          "leave_students": 2,
+          "pre_done": 44,
+          "pre_denom": 51,
+          "pre_rate": 0.8627,
+          "image_done": 16,
+          "image_denom": 49,
+          "image_rate": 0.3265,
+          "file_done": 16,
+          "file_denom": 49,
+          "file_rate": 0.3265,
+          "text_done": 11,
+          "text_denom": 49,
+          "text_rate": 0.2245,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              6
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              1
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              21
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              12
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              21
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              12
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內無老師消息",
+              21
+            ],
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              12
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              5
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "76029",
+          "teacher_alias": "粉栗子老師",
+          "signed_students": 34,
+          "leave_students": 8,
+          "pre_done": 14,
+          "pre_denom": 42,
+          "pre_rate": 0.3333,
+          "image_done": 32,
+          "image_denom": 34,
+          "image_rate": 0.9412,
+          "file_done": 32,
+          "file_denom": 34,
+          "file_rate": 0.9412,
+          "text_done": 12,
+          "text_denom": 34,
+          "text_rate": 0.3529,
+          "pre_reasons": [
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              16
+            ],
+            [
+              "课前24小时内无老师消息",
+              12
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              2
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              2
+            ]
+          ],
+          "text_reasons": [
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              12
+            ],
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              8
+            ],
+            [
+              "課後24小時內無老師消息",
+              2
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "75993",
+          "teacher_alias": "粉紅魚老師",
+          "signed_students": 68,
+          "leave_students": 10,
+          "pre_done": 0,
+          "pre_denom": 78,
+          "pre_rate": 0.0,
+          "image_done": 14,
+          "image_denom": 68,
+          "image_rate": 0.2059,
+          "file_done": 1,
+          "file_denom": 68,
+          "file_rate": 0.0147,
+          "text_done": 46,
+          "text_denom": 68,
+          "text_rate": 0.6765,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              68
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              10
+            ]
+          ],
+          "image_reasons": [
+            [
+              "存在圖片消息，但超出課後24小時",
+              53
+            ],
+            [
+              "課後24小時內無老師消息",
+              1
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              40
+            ],
+            [
+              "課後24小時內無文件消息",
+              26
+            ],
+            [
+              "課後24小時內無老師消息",
+              1
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              19
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              2
+            ],
+            [
+              "課後24小時內無老師消息",
+              1
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "76902",
+          "teacher_alias": "糰子老師",
+          "signed_students": 25,
+          "leave_students": 2,
+          "pre_done": 3,
+          "pre_denom": 27,
+          "pre_rate": 0.1111,
+          "image_done": 22,
+          "image_denom": 25,
+          "image_rate": 0.88,
+          "file_done": 0,
+          "file_denom": 25,
+          "file_rate": 0.0,
+          "text_done": 14,
+          "text_denom": 25,
+          "text_rate": 0.56,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              19
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              5
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              3
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無文件消息",
+              17
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              5
+            ],
+            [
+              "課後24小時內無老師消息",
+              3
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              5
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              3
+            ],
+            [
+              "課後24小時內無老師消息",
+              3
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "76135",
+          "teacher_alias": "蘇心老師",
+          "signed_students": 62,
+          "leave_students": 12,
+          "pre_done": 15,
+          "pre_denom": 74,
+          "pre_rate": 0.2027,
+          "image_done": 27,
+          "image_denom": 62,
+          "image_rate": 0.4355,
+          "file_done": 33,
+          "file_denom": 62,
+          "file_rate": 0.5323,
+          "text_done": 24,
+          "text_denom": 62,
+          "text_rate": 0.3871,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              35
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              24
+            ]
+          ],
+          "image_reasons": [
+            [
+              "存在圖片消息，但超出課後24小時",
+              22
+            ],
+            [
+              "課後24小時內無老師消息",
+              13
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              14
+            ],
+            [
+              "課後24小時內無老師消息",
+              13
+            ],
+            [
+              "課後24小時內無文件消息",
+              2
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              19
+            ],
+            [
+              "課後24小時內無老師消息",
+              13
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              6
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "4935",
+          "teacher_alias": "蘑菇老師",
+          "signed_students": 31,
+          "leave_students": 4,
+          "pre_done": 1,
+          "pre_denom": 35,
+          "pre_rate": 0.0286,
+          "image_done": 31,
+          "image_denom": 31,
+          "image_rate": 1.0,
+          "file_done": 30,
+          "file_denom": 31,
+          "file_rate": 0.9677,
+          "text_done": 18,
+          "text_denom": 31,
+          "text_rate": 0.5806,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              21
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              13
+            ]
+          ],
+          "image_reasons": [],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              12
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              1
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "7560",
+          "teacher_alias": "阿魚老師",
+          "signed_students": 74,
+          "leave_students": 8,
+          "pre_done": 12,
+          "pre_denom": 82,
+          "pre_rate": 0.1463,
+          "image_done": 65,
+          "image_denom": 74,
+          "image_rate": 0.8784,
+          "file_done": 54,
+          "file_denom": 74,
+          "file_rate": 0.7297,
+          "text_done": 32,
+          "text_denom": 74,
+          "text_rate": 0.4324,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              63
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              7
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              8
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              1
+            ]
+          ],
+          "file_reasons": [
+            [
+              "存在文件消息，但超出課後24小時",
+              12
+            ],
+            [
+              "課後24小時內無老師消息",
+              8
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              19
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              15
+            ],
+            [
+              "課後24小時內無老師消息",
+              8
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "72847",
+          "teacher_alias": "青豌豆老師",
+          "signed_students": 52,
+          "leave_students": 10,
+          "pre_done": 3,
+          "pre_denom": 62,
+          "pre_rate": 0.0484,
+          "image_done": 34,
+          "image_denom": 52,
+          "image_rate": 0.6538,
+          "file_done": 21,
+          "file_denom": 52,
+          "file_rate": 0.4038,
+          "text_done": 16,
+          "text_denom": 52,
+          "text_rate": 0.3077,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              55
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              4
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              16
+            ],
+            [
+              "存在圖片消息，但超出課後24小時",
+              2
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              16
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              15
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              17
+            ],
+            [
+              "課後24小時內無老師消息",
+              16
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              2
+            ],
+            [
+              "課後24小時內僅有圖片或文件，無文字",
+              1
+            ]
+          ]
+        },
+        {
+          "period_key": "2026-06_W4",
+          "teacher_id": "7498",
+          "teacher_alias": "青魚老師",
+          "signed_students": 58,
+          "leave_students": 8,
+          "pre_done": 23,
+          "pre_denom": 66,
+          "pre_rate": 0.3485,
+          "image_done": 47,
+          "image_denom": 58,
+          "image_rate": 0.8103,
+          "file_done": 38,
+          "file_denom": 58,
+          "file_rate": 0.6552,
+          "text_done": 18,
+          "text_denom": 58,
+          "text_rate": 0.3103,
+          "pre_reasons": [
+            [
+              "课前24小时内无老师消息",
+              38
+            ],
+            [
+              "课前24小时内有消息，但未识别到预告文案",
+              5
+            ]
+          ],
+          "image_reasons": [
+            [
+              "課後24小時內無老師消息",
+              11
+            ]
+          ],
+          "file_reasons": [
+            [
+              "課後24小時內無老師消息",
+              11
+            ],
+            [
+              "存在文件消息，但超出課後24小時",
+              9
+            ]
+          ],
+          "text_reasons": [
+            [
+              "課後24小時內有文本，但未識別到學員姓名",
+              20
+            ],
+            [
+              "課後24小時內無老師消息",
+              11
+            ],
+            [
+              "存在帶學員姓名文本，但超出課後24小時",
+              9
             ]
           ]
         }

@@ -469,17 +469,15 @@
     {
       "month": "2026-06",
       "monthly_summary": {
-        "due_count": 18,
-        "done_count": 13,
-        "undone_count": 4,
-        "exception_count": 1,
-        "done_rate": 0.7222,
+        "due_count": 20,
+        "done_count": 15,
+        "undone_count": 5,
+        "exception_count": 0,
+        "done_rate": 0.75,
         "undone_reason_counts": {
-          "48小时内有老师消息，但未识别到姓名或结课关键词": 4
+          "48小时内有老师消息，但未识别到姓名或结课关键词": 5
         },
-        "exception_reason_counts": {
-          "LINE中无老师消息": 1
-        }
+        "exception_reason_counts": {}
       },
       "weekly_summary": [
         {
@@ -595,40 +593,16 @@
           "week_label": "6W3",
           "start_date": "2026-06-15",
           "end_date": "2026-06-21",
-          "due_count": 10,
+          "due_count": 9,
           "done_count": 5,
           "undone_count": 4,
-          "exception_count": 1,
-          "done_rate": 0.5,
+          "exception_count": 0,
+          "done_rate": 0.5556,
           "undone_reason_counts": {
             "48小时内有老师消息，但未识别到姓名或结课关键词": 4
           },
-          "exception_reason_counts": {
-            "LINE中无老师消息": 1
-          },
+          "exception_reason_counts": {},
           "teachers": [
-            {
-              "teacher_id": "7391",
-              "teacher_alias": "小加老師",
-              "due_count": 1,
-              "done_count": 0,
-              "undone_count": 0,
-              "exception_count": 1,
-              "done_rate": 0.0,
-              "undone_students": [],
-              "exception_students": [
-                {
-                  "student_id": "23567996",
-                  "student_name": "子皓",
-                  "closure_date": "2026-06-20 00:00:00",
-                  "reason": "LINE中无老师消息"
-                }
-              ],
-              "undone_reason_counts": {},
-              "exception_reason_counts": {
-                "LINE中无老师消息": 1
-              }
-            },
             {
               "teacher_id": "76029",
               "teacher_alias": "粉栗子老師",
@@ -743,6 +717,71 @@
             {
               "teacher_id": "76135",
               "teacher_alias": "蘇心老師",
+              "due_count": 1,
+              "done_count": 1,
+              "undone_count": 0,
+              "exception_count": 0,
+              "done_rate": 1.0,
+              "undone_students": [],
+              "exception_students": [],
+              "undone_reason_counts": {},
+              "exception_reason_counts": {}
+            }
+          ]
+        },
+        {
+          "month": "2026-06",
+          "week_label": "6W4",
+          "start_date": "2026-06-22",
+          "end_date": "2026-06-25",
+          "due_count": 3,
+          "done_count": 2,
+          "undone_count": 1,
+          "exception_count": 0,
+          "done_rate": 0.6667,
+          "undone_reason_counts": {
+            "48小时内有老师消息，但未识别到姓名或结课关键词": 1
+          },
+          "exception_reason_counts": {},
+          "teachers": [
+            {
+              "teacher_id": "72847",
+              "teacher_alias": "青豌豆老師",
+              "due_count": 1,
+              "done_count": 0,
+              "undone_count": 1,
+              "exception_count": 0,
+              "done_rate": 0.0,
+              "undone_students": [
+                {
+                  "student_id": "28251721",
+                  "student_name": "曾品鈞",
+                  "closure_date": "2026-06-24 00:00:00",
+                  "reason": "48小时内有老师消息，但未识别到姓名或结课关键词"
+                }
+              ],
+              "exception_students": [],
+              "undone_reason_counts": {
+                "48小时内有老师消息，但未识别到姓名或结课关键词": 1
+              },
+              "exception_reason_counts": {}
+            },
+            {
+              "teacher_id": "4735",
+              "teacher_alias": "果凍老師",
+              "due_count": 1,
+              "done_count": 1,
+              "undone_count": 0,
+              "exception_count": 0,
+              "done_rate": 1.0,
+              "undone_students": [],
+              "exception_students": [],
+              "undone_reason_counts": {},
+              "exception_reason_counts": {}
+            },
+            {
+              "teacher_id": "75993",
+              "teacher_alias": "粉紅魚老師",
               "due_count": 1,
               "done_count": 1,
               "undone_count": 0,

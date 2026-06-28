@@ -33,7 +33,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "month": "2026-05",
@@ -80,49 +81,62 @@
           "48小時內有老師消息，但未識別到姓名或結課關鍵詞": 2
         },
         "exception_reason_counts": {}
-      }
+      },
+      "new_signup": null
     },
     {
       "month": "2026-06",
       "regular_course": {
-        "signedStudents": 5052,
-        "leaveStudents": 182,
+        "signedStudents": 6138,
+        "leaveStudents": 702,
         "exceptionCount": 399,
         "metrics": [
           {
             "key": "pre_notice",
-            "done": 1571,
-            "denom": 5621,
-            "rate": 0.27948763565201923
+            "done": 1896,
+            "denom": 6840,
+            "rate": 0.2771929824561403
           },
           {
             "key": "post_image",
-            "done": 2880,
-            "denom": 5052,
-            "rate": 0.5700712589073634
+            "done": 3535,
+            "denom": 6138,
+            "rate": 0.575920495275334
           },
           {
             "key": "post_file",
-            "done": 2840,
-            "denom": 5052,
-            "rate": 0.56215360253365
+            "done": 3457,
+            "denom": 6138,
+            "rate": 0.5632127728901922
           },
           {
             "key": "post_text",
-            "done": 2339,
-            "denom": 5052,
-            "rate": 0.46298495645288995
+            "done": 2794,
+            "denom": 6138,
+            "rate": 0.4551971326164875
           }
         ]
       },
       "closure_message": {
-        "due_count": 5,
-        "done_count": 5,
-        "undone_count": 0,
+        "due_count": 20,
+        "done_count": 15,
+        "undone_count": 5,
         "exception_count": 0,
-        "done_rate": 1.0,
-        "undone_reason_counts": {},
+        "done_rate": 0.75,
+        "undone_reason_counts": {
+          "48小时内有老师消息，但未识别到姓名或结课关键词": 5
+        },
         "exception_reason_counts": {}
+      },
+      "new_signup": {
+        "record_count": 129,
+        "teacher_count": 19,
+        "done_count": 51,
+        "done_rate": 0.3953,
+        "intro_rate": 0.4109,
+        "video_invite_rate": 0.5194,
+        "preclass_notice_rate": 0.5271,
+        "line_missing_students": 31
       }
     }
   ],
@@ -154,7 +168,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-04_W2",
@@ -183,7 +198,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-04_W3",
@@ -212,7 +228,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-04_W4",
@@ -241,7 +258,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_5W1",
@@ -254,7 +272,8 @@
         "undoneCount": 0,
         "exceptionCount": 0,
         "doneRate": 1.0
-      }
+      },
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_5W2",
@@ -267,7 +286,8 @@
         "undoneCount": 2,
         "exceptionCount": 0,
         "doneRate": 0.6
-      }
+      },
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_5W3",
@@ -280,7 +300,8 @@
         "undoneCount": 2,
         "exceptionCount": 0,
         "doneRate": 0.6
-      }
+      },
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_5W4",
@@ -293,7 +314,8 @@
         "undoneCount": 3,
         "exceptionCount": 0,
         "doneRate": 0.5714
-      }
+      },
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_5W5",
@@ -306,7 +328,8 @@
         "undoneCount": 3,
         "exceptionCount": 0,
         "doneRate": 0.5714
-      }
+      },
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_W1",
@@ -335,7 +358,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_W2",
@@ -364,7 +388,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_W3",
@@ -393,7 +418,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-05_W4",
@@ -422,7 +448,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-06_6W1",
@@ -435,7 +462,50 @@
         "undoneCount": 0,
         "exceptionCount": 0,
         "doneRate": 1.0
-      }
+      },
+      "new_signup": null
+    },
+    {
+      "periodKey": "2026-06_6W2",
+      "periodLabel": "2026-06-08 ~ 2026-06-14",
+      "bucketLabel": "6W2",
+      "regular_course": null,
+      "closure_message": {
+        "dueCount": 3,
+        "doneCount": 3,
+        "undoneCount": 0,
+        "exceptionCount": 0,
+        "doneRate": 1.0
+      },
+      "new_signup": null
+    },
+    {
+      "periodKey": "2026-06_6W3",
+      "periodLabel": "2026-06-15 ~ 2026-06-21",
+      "bucketLabel": "6W3",
+      "regular_course": null,
+      "closure_message": {
+        "dueCount": 9,
+        "doneCount": 5,
+        "undoneCount": 4,
+        "exceptionCount": 0,
+        "doneRate": 0.5556
+      },
+      "new_signup": null
+    },
+    {
+      "periodKey": "2026-06_6W4",
+      "periodLabel": "2026-06-22 ~ 2026-06-25",
+      "bucketLabel": "6W4",
+      "regular_course": null,
+      "closure_message": {
+        "dueCount": 3,
+        "doneCount": 2,
+        "undoneCount": 1,
+        "exceptionCount": 0,
+        "doneRate": 0.6667
+      },
+      "new_signup": null
     },
     {
       "periodKey": "2026-06_W1",
@@ -464,7 +534,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-06_W2",
@@ -472,7 +543,7 @@
       "bucketLabel": "W2",
       "regular_course": {
         "signedStudents": 1806,
-        "leaveStudents": 0,
+        "leaveStudents": 217,
         "exceptionCount": 0,
         "metrics": [
           {
@@ -493,7 +564,8 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
     },
     {
       "periodKey": "2026-06_W3",
@@ -501,7 +573,7 @@
       "bucketLabel": "W3",
       "regular_course": {
         "signedStudents": 1669,
-        "leaveStudents": 0,
+        "leaveStudents": 170,
         "exceptionCount": 0,
         "metrics": [
           {
@@ -522,7 +594,38 @@
           }
         ]
       },
-      "closure_message": null
+      "closure_message": null,
+      "new_signup": null
+    },
+    {
+      "periodKey": "2026-06_W4",
+      "periodLabel": "2026-06-22 ~ 2026-06-25",
+      "bucketLabel": "W4",
+      "regular_course": {
+        "signedStudents": 1086,
+        "leaveStudents": 133,
+        "exceptionCount": 0,
+        "metrics": [
+          {
+            "key": "pre_notice",
+            "rate": 0.3179
+          },
+          {
+            "key": "post_image",
+            "rate": 0.6535
+          },
+          {
+            "key": "post_file",
+            "rate": 0.5542
+          },
+          {
+            "key": "post_text",
+            "rate": 0.4176
+          }
+        ]
+      },
+      "closure_message": null,
+      "new_signup": null
     }
   ]
 }
